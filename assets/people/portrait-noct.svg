@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">ノクト人物画像</title>
+  <desc id="desc">夜色の外套をまとった密偵風の人物シルエット。</desc>
+  <rect width="640" height="800" fill="#05060a"/>
+  <path fill="#10172a" d="m320 60 250 660H70L320 60Z" opacity=".78"/>
+  <circle cx="320" cy="320" r="92" fill="#161d31"/>
+  <path fill="#070910" d="M200 720c12-158 58-260 120-260s108 102 120 260H200Z"/>
+  <path fill="#8f8795" opacity=".62" d="M224 292c30-74 162-74 192 0-56-16-136-16-192 0Z"/>
+  <path fill="#c7a45a" opacity=".75" d="M285 412h70l-35 68-35-68Z"/>
+</svg>

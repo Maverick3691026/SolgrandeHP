@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">セレーネ人物画像</title>
+  <desc id="desc">星と魔法陣をまとった魔術師風の人物シルエット。</desc>
+  <rect width="640" height="800" fill="#070910"/>
+  <path fill="#10172a" d="M0 0h640v800H0z"/>
+  <g fill="#e2cf91" opacity=".65">
+    <circle cx="150" cy="150" r="4"/>
+    <circle cx="480" cy="130" r="3"/>
+    <circle cx="520" cy="320" r="4"/>
+    <circle cx="110" cy="430" r="3"/>
+    <circle cx="360" cy="90" r="2"/>
+  </g>
+  <circle cx="320" cy="302" r="132" fill="none" stroke="#c7a45a" stroke-width="2" opacity=".45"/>
+  <path fill="#17223d" d="M140 720c34-145 112-225 180-225s146 80 180 225H140Z"/>
+  <circle cx="320" cy="315" r="86" fill="#243052"/>
+  <path fill="#c7a45a" opacity=".78" d="M236 250c42-72 126-72 168 0-42-20-126-20-168 0Z"/>
+  <path fill="#e2cf91" opacity=".85" d="m320 478 42 118-42 54-42-54 42-118Z"/>
+</svg>

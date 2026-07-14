@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">リラ人物画像</title>
+  <desc id="desc">森と風をイメージした斥候風の人物シルエット。</desc>
+  <rect width="640" height="800" fill="#07100d"/>
+  <path fill="#10172a" d="M0 0h640v800H0z" opacity=".8"/>
+  <path fill="none" stroke="#c7a45a" stroke-width="2" opacity=".34" d="M95 650c120-150 330-260 450-500"/>
+  <path fill="#111a30" d="M130 720c28-145 112-220 190-220s162 75 190 220H130Z"/>
+  <circle cx="320" cy="320" r="84" fill="#22314a"/>
+  <path fill="#1d3a32" d="M220 292c44-88 156-88 200 0-62-34-138-34-200 0Z"/>
+  <path fill="#c7a45a" opacity=".7" d="M214 612c45-54 167-54 212 0-58 24-154 24-212 0Z"/>
+</svg>

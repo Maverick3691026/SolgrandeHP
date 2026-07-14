@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">王都グランヴェイル</title>
+  <desc id="desc">城壁都市と塔を描いた王都グランヴェイルのイメージ。</desc>
+  <rect width="640" height="800" fill="#070910"/>
+  <path fill="#10172a" d="M0 0h640v800H0z"/>
+  <circle cx="470" cy="170" r="86" fill="#c7a45a" opacity=".18"/>
+  <path fill="#17223d" d="M90 610h460v100H90z"/>
+  <path fill="#26314d" d="M130 360h90v250h-90zM275 260h90v350h-90zM420 330h90v280h-90z"/>
+  <path fill="#c7a45a" d="M120 340h110v28H120zM265 240h110v28H265zM410 310h110v28H410z" opacity=".85"/>
+  <path fill="none" stroke="#e2cf91" stroke-width="4" opacity=".42" d="M70 710h500M150 610v100M320 610v100M490 610v100"/>
+</svg>

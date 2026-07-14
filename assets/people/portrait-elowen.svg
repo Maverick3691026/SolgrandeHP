@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">エロウェン人物画像</title>
+  <desc id="desc">神殿の紋様を背負う聖職者風の人物シルエット。</desc>
+  <rect width="640" height="800" fill="#080910"/>
+  <circle cx="320" cy="270" r="190" fill="none" stroke="#e2cf91" stroke-width="2" opacity=".25"/>
+  <path fill="#17223d" d="M132 720c36-150 108-230 188-230s152 80 188 230H132Z"/>
+  <circle cx="320" cy="320" r="88" fill="#26314d"/>
+  <path fill="#c7a45a" opacity=".82" d="M300 140h40v140h-40zM250 190h140v36H250z"/>
+  <path fill="#e2cf91" opacity=".72" d="M236 600h168l-84 78-84-78Z"/>
+</svg>

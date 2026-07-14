@@ -1,0 +1,61 @@
+body {
+  background:
+    radial-gradient(circle at 50% -20%, rgba(199, 164, 90, 0.14), transparent 34rem),
+    linear-gradient(180deg, #070910 0%, #10172a 44%, #070910 100%);
+}
+
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), transparent 72%);
+}
+
+.hero {
+  background:
+    linear-gradient(180deg, rgba(7, 9, 16, 0.2), rgba(7, 9, 16, 0.78)),
+    radial-gradient(circle at 24% 24%, rgba(226, 207, 145, 0.2), transparent 18rem),
+    linear-gradient(135deg, #070910 0%, #111a30 48%, #05060a 100%);
+}
+
+.hero--home {
+  background:
+    linear-gradient(90deg, rgba(7, 9, 16, 0.86), rgba(7, 9, 16, 0.58) 48%, rgba(7, 9, 16, 0.78)),
+    linear-gradient(180deg, rgba(7, 9, 16, 0.16), rgba(7, 9, 16, 0.86)),
+    url("../assets/images/home-archive-bg.png") center center / cover no-repeat;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, transparent 0 12%, rgba(199, 164, 90, 0.2) 12.2%, transparent 12.5% 87.5%, rgba(199, 164, 90, 0.2) 87.8%, transparent 88%),
+    linear-gradient(180deg, transparent 0 16%, rgba(199, 164, 90, 0.16) 16.15%, transparent 16.4% 82%, rgba(199, 164, 90, 0.13) 82.15%, transparent 82.4%);
+  opacity: 0.65;
+}
+
+.hero::after {
+  position: absolute;
+  inset: auto 8% 11% auto;
+  width: min(46vw, 520px);
+  aspect-ratio: 1;
+  content: "";
+  border: 1px solid rgba(226, 207, 145, 0.22);
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, transparent 49.6%, rgba(226, 207, 145, 0.16) 50%, transparent 50.4%),
+    linear-gradient(0deg, transparent 49.6%, rgba(226, 207, 145, 0.16) 50%, transparent 50.4%);
+  opacity: 0.5;
+}
+
+.section--dark {
+  background: linear-gradient(180deg, rgba(7, 9, 16, 0.5), rgba(9, 13, 24, 0.95));
+  border-block: 1px solid rgba(226, 207, 145, 0.14);
+}

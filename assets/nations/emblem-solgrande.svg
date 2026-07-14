@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">ソルグランデ王国紋章</title>
+  <desc id="desc">星冠と城門を象徴するソルグランデ王国の紋章。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17223d"/>
+      <stop offset="1" stop-color="#070910"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e2cf91"/>
+      <stop offset="1" stop-color="#c7a45a"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <path fill="#10172a" d="M110 130h420v520L320 722 110 650V130Z"/>
+  <path fill="none" stroke="#c7a45a" stroke-width="8" d="M145 166h350v456l-175 60-175-60V166Z" opacity=".78"/>
+  <path fill="url(#gold)" d="M220 308h200v260H220z"/>
+  <path fill="#10172a" d="M260 394h40v174h-40zM340 394h40v174h-40z"/>
+  <path fill="url(#gold)" d="M204 300 250 220l42 56 28-82 28 82 42-56 46 80H204Z"/>
+  <circle cx="320" cy="180" r="28" fill="#e2cf91"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-labelledby="title desc">
+  <title id="title">ガリック人物画像</title>
+  <desc id="desc">盾と鎧を思わせる騎士風の人物シルエット。</desc>
+  <rect width="640" height="800" fill="#080b12"/>
+  <path fill="#17223d" d="M80 70h480v660H80z" opacity=".72"/>
+  <path fill="none" stroke="#c7a45a" stroke-width="3" opacity=".38" d="M180 150h280v500H180z"/>
+  <path fill="#10172a" d="M108 720c42-150 122-225 212-225s170 75 212 225H108Z"/>
+  <circle cx="320" cy="320" r="88" fill="#27314a"/>
+  <path fill="#8f8795" d="M230 286c22-78 158-78 180 0l-90-32-90 32Z"/>
+  <path fill="#c7a45a" opacity=".8" d="M250 575h140v110H250z"/>
+  <path fill="none" stroke="#e2cf91" stroke-width="10" opacity=".55" d="M320 520v160"/>
+</svg>
