@@ -681,7 +681,8 @@
 
 .person-hero__visual,
 .monster-hero__visual,
-.race-hero__visual {
+.race-hero__visual,
+.item-hero__visual {
   overflow: visible;
   background: transparent;
   border: 0;
