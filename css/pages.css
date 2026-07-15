@@ -146,6 +146,29 @@
   font-size: 1.05rem;
 }
 
+.page-hero--viala {
+  min-height: clamp(25rem, 52vw, 42rem);
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(90deg, rgba(7, 9, 16, 0.94) 0%, rgba(7, 9, 16, 0.64) 48%, rgba(7, 9, 16, 0.24) 100%),
+    linear-gradient(180deg, rgba(7, 9, 16, 0.08) 0%, rgba(7, 9, 16, 0.84) 100%),
+    url("../assets/images/currency-viala-00.png") center 62% / cover no-repeat;
+}
+
+.page-hero--viala .page-hero__inner {
+  padding-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+
+.page-hero--viala h1 {
+  text-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.82);
+}
+
+.page-hero--viala p {
+  color: rgba(246, 242, 232, 0.92);
+  text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
+}
+
 .page-hero--races-index {
   min-height: clamp(25rem, 52vw, 42rem);
   display: grid;
