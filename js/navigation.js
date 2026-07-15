@@ -61,6 +61,16 @@
     }).join("");
   }
 
+  function updateSiteBrandLink() {
+    var siteBrand = document.querySelector(".site-brand");
+
+    if (!siteBrand) {
+      return;
+    }
+
+    siteBrand.setAttribute("href", getSiteRoot() + "index.html");
+  }
+
   function setCurrentNavigation() {
     var currentPath = normalizePath(window.location.pathname);
     var links = document.querySelectorAll(".site-nav a");
@@ -104,6 +114,7 @@
 
   window.SolgrandeNavigation = {
     init: function () {
+      updateSiteBrandLink();
       renderNavigation();
       setCurrentNavigation();
       initMobileNavigation();

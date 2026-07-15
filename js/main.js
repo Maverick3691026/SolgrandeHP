@@ -3,6 +3,16 @@
 
   var loadedScripts = {};
 
+  function stabilizePersistentResourceUrls() {
+    document.querySelectorAll('link[rel="stylesheet"][href]').forEach(function (link) {
+      link.setAttribute("href", link.href);
+    });
+
+    document.querySelectorAll("[data-home-audio][src]").forEach(function (audio) {
+      audio.setAttribute("src", audio.src);
+    });
+  }
+
   function getAudioPlayer() {
     return document.querySelector("[data-home-audio-player]");
   }
@@ -238,6 +248,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
+    stabilizePersistentResourceUrls();
+
     if (window.SolgrandeNavigation) {
       window.SolgrandeNavigation.init();
     }
