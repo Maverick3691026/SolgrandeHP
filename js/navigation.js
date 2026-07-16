@@ -33,19 +33,17 @@
     var allSections = navigationItems.map(function (item) {
       return item.path.split("/")[0];
     });
-    var fileName = segments[segments.length - 1];
-    var parent = segments[segments.length - 2];
-    var grandParent = segments[segments.length - 3];
+    var sectionIndex = -1;
 
-    if (parent === "entries" && allSections.indexOf(grandParent) !== -1) {
-      return "../../";
+    allSections.forEach(function (section) {
+      sectionIndex = Math.max(sectionIndex, segments.lastIndexOf(section));
+    });
+
+    if (sectionIndex === -1) {
+      return "";
     }
 
-    if (fileName === "index.html" && allSections.indexOf(parent) !== -1) {
-      return "../";
-    }
-
-    return "";
+    return "../".repeat(segments.length - sectionIndex - 1);
   }
 
   function renderNavigation() {
