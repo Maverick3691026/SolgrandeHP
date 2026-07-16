@@ -49,6 +49,8 @@
     var label = document.createElement("p");
     var title = document.createElement("h3");
     var meta = document.createElement("dl");
+    var figure;
+    var image;
 
     button.className = "person-card geo-card";
     if (item.detailUrl) {
@@ -82,7 +84,20 @@
 
     body.appendChild(label);
     body.appendChild(title);
+
+    if (type === "nation" && item.id === "belmosia-principality" && item.image) {
+      figure = document.createElement("figure");
+      image = document.createElement("img");
+      figure.className = "geo-card__image";
+      image.src = item.image;
+      image.alt = item.name + "の紋章";
+      image.loading = "lazy";
+      figure.appendChild(image);
+      body.appendChild(figure);
+    }
+
     body.appendChild(meta);
+
     button.appendChild(body);
 
     return button;

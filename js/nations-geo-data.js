@@ -10,8 +10,8 @@
         type: "公国",
         capital: "ツァダル",
         government: "公国制",
-        mainRace: "未設定",
-        image: "../assets/nations/settlement-tsadar.png",
+        mainRace: "人族",
+        image: "../assets/nations/bermouthia-01.png",
         detailUrl: "entries/Principality%20of%20Bermouthia.html",
         order: 1
       },
