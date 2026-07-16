@@ -147,9 +147,13 @@
       panelTitle: "施設資料の型",
       panelText: "所在地、管理組織、機能、歴史、関連事件を揃え、名所や組織ページへ接続します。",
       entries: [
-        ["城塞・砦", "防衛、統治、国境管理の拠点。"],
-        ["神殿・修道院", "信仰、医療、教育にも関わる施設。"],
-        ["学院・工房", "魔法研究や技術生産の中心地。"]
+        ["軍事・防衛", "城塞、砦、兵舎など、国家や地域の防衛を担う施設。"],
+        ["宗教・祭祀", "神殿、礼拝堂、祭壇など、信仰と儀礼に関わる施設。"],
+        ["教育・研究", "学院、図書館、研究所など、知識の継承と探究を担う施設。"],
+        ["生産・工房", "鍛冶場、工房、製造所など、道具や物資を生産する施設。"],
+        ["行政・司法", "官庁、法廷、役所など、統治と法の執行を担う施設。"],
+        ["商業・市場", "市場、商店、交易所など、商品と金銭が行き交う施設。", "commercial/index.html"],
+        ["街道・旅路", "街道、関所、駅舎など、人々の移動と物流を支える施設。"]
       ]
     },
     glossary: {
@@ -190,7 +194,9 @@
 
     if (list) {
       list.innerHTML = category.entries.map(function (entry) {
-        var title = entry[2] ? '<a href="' + entry[2] + '">' + entry[0] + "</a>" : entry[0];
+        var title = entry[2]
+          ? '<a href="' + entry[2] + '">' + entry[0] + "</a>"
+          : '<span class="entry-link--pending" aria-disabled="true" tabindex="0" data-tooltip="準備中">' + entry[0] + "</span>";
         return '<li class="entry-item"><h3>' + title + '</h3><p>' + entry[1] + "</p></li>";
       }).join("");
     }

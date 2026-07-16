@@ -168,6 +168,49 @@
   content: ">";
 }
 
+.entry-link--pending {
+  position: relative;
+  display: inline-block;
+  color: var(--color-dim);
+  cursor: not-allowed;
+}
+
+.entry-link--pending::after {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(100% + 0.55rem);
+  left: 50%;
+  padding: 0.35rem 0.65rem;
+  color: var(--color-night);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  content: attr(data-tooltip);
+  background: var(--color-gold-soft);
+  border-radius: 0.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0.3rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.entry-link--pending:hover::after,
+.entry-link--pending:focus-visible::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (hover: none) {
+  .entry-link--pending::after {
+    position: static;
+    display: inline-block;
+    margin-left: 0.55rem;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 .breadcrumb {
   margin-bottom: 2rem;
   color: var(--color-dim);

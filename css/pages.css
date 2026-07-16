@@ -238,6 +238,52 @@
   text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
 }
 
+.page-hero--weapon-shop {
+  min-height: clamp(25rem, 52vw, 42rem);
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(90deg, rgba(7, 9, 16, 0.9) 0%, rgba(7, 9, 16, 0.58) 48%, rgba(7, 9, 16, 0.2) 100%),
+    linear-gradient(180deg, rgba(7, 9, 16, 0.08) 0%, rgba(7, 9, 16, 0.86) 100%),
+    url("../assets/images/facility-weapon-shop-00.png") center / cover no-repeat;
+}
+
+.page-hero--weapon-shop .page-hero__inner {
+  padding-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+
+.page-hero--weapon-shop h1 {
+  text-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.82);
+}
+
+.page-hero--weapon-shop p {
+  color: rgba(246, 242, 232, 0.92);
+  text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
+}
+
+.page-hero--novel-index {
+  min-height: clamp(25rem, 52vw, 42rem);
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(90deg, rgba(7, 9, 16, 0.9) 0%, rgba(7, 9, 16, 0.58) 44%, rgba(7, 9, 16, 0.14) 100%),
+    linear-gradient(180deg, rgba(7, 9, 16, 0.05) 0%, rgba(7, 9, 16, 0.82) 100%),
+    url("../assets/images/novel-solgrande-00.png") center / cover no-repeat;
+}
+
+.page-hero--novel-index .page-hero__inner {
+  padding-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+
+.page-hero--novel-index h1 {
+  text-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.82);
+}
+
+.page-hero--novel-index p {
+  color: rgba(246, 242, 232, 0.92);
+  text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
+}
+
 .page-hero--religions-index {
   min-height: clamp(25rem, 52vw, 42rem);
   display: grid;
