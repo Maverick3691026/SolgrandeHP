@@ -96,6 +96,25 @@
       appearanceOrder: 11,
       image: "../assets/people/portrait-cassian-hales.png",
       detailUrl: "entries/cassian-hales.html"
+    },
+    {
+      id: "rin-seriol",
+      name: "リン・セリオール",
+      englishName: "Rin Seriol",
+      age: 20,
+      gender: "女性",
+      race: "人族",
+      origin: "タレンフォール要塞公国・チップトン",
+      residence: "タレンフォール要塞公国・首都シャールカタフ",
+      nation: "タレンフォール要塞公国",
+      affiliation: "首都シャールカタフの冒険者ギルド本部",
+      occupation: "Bランク冒険者",
+      attribute: "",
+      epithet: "",
+      specialty: "氷旋流剣術・リュートの弾き語り",
+      appearanceOrder: 12,
+      image: "../assets/people/portrait-rin-seriol.png",
+      detailUrl: "entries/rin-seriol.html"
     }
   ];
 })();
