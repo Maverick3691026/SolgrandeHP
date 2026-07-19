@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOLGRANDEの楽曲と音楽文化を収録する音楽資料ページ。">
+  <title>音楽 | SOLGRANDE</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/themes.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/pages.css">
+  <script src="../js/navigation.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">本文へ移動</a>
+
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-brand" href="../index.html" aria-label="SOLGRANDE トップページ">
+        <span class="site-brand__mark" aria-hidden="true">S</span>
+        <span class="site-brand__text">
+          <span class="site-brand__name">SOLGRANDE</span>
+          <span class="site-brand__sub">Official Lore Archive</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="主要ナビゲーション" data-site-nav>
+        <ul class="site-nav__list">
+          <li><a href="../world/index.html">世界観</a></li>
+          <li><a href="../nations/index.html">国家</a></li>
+          <li><a href="../glossary/index.html">用語集</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="page-hero__inner">
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+          <ol>
+            <li><a href="../index.html">SOLGRANDE</a></li>
+            <li aria-current="page">音楽</li>
+          </ol>
+        </nav>
+        <p class="eyebrow">SOLGRANDE Music</p>
+        <h1>音楽</h1>
+        <p>楽曲、劇伴、各地の音楽文化を収録する音の資料館。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <article class="lore-panel" data-music-player>
+          <p class="eyebrow">Music Archive</p>
+          <h2>Ⅰ.Vox Precis</h2>
+          <p>ソルグランデ音楽資料に収録された楽曲。</p>
+          <audio id="vox-precis-audio" src="../assets/audio/Vox%20Precis.mp3" preload="metadata" data-music-audio></audio>
+          <div class="card-grid card-grid--three" aria-label="Vox Precis 再生操作">
+            <button class="button button--primary" type="button" aria-controls="vox-precis-audio" data-music-play>再生</button>
+            <button class="button button--ghost" type="button" aria-controls="vox-precis-audio" data-music-pause>一時停止</button>
+            <button class="button button--ghost" type="button" aria-controls="vox-precis-audio" data-music-stop>停止</button>
+          </div>
+          <label class="hero-audio__volume">
+            <span>音量</span>
+            <input type="range" min="0" max="1" step="0.05" value="0.7" aria-label="Ⅰ.Vox Precisの音量" data-music-volume>
+          </label>
+          <p class="template-note" role="status" aria-live="polite" data-music-status>停止中</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">SOLGRANDE</p>
+      <p class="site-footer__note">Official high fantasy world archive.</p>
+    </div>
+  </footer>
+</body>
+</html>

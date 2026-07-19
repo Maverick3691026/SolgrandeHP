@@ -165,6 +165,7 @@
       entries: [
         ["ヴィアラ", "ソルグランデ全土で広く流通している共通通貨。", "entries/viala.html"],
         ["剣術流派", "剣術の技法と理念を体系化し、師から弟子へ受け継がれる流派。", "sword-schools/index.html"],
+        ["長さ単位", "ティル、リーヴ、ガルナ、ヴェルドから成る長さ・距離単位。", "entries/length-units.html"],
         ["英雄クラウス物語 上巻", "ブレノリア大陸に伝わるおとぎ話。英雄クラウスの誕生を描く。", "entries/hero-klaus-upper.html"]
       ]
     }

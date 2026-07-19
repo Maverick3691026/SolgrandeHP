@@ -8,7 +8,7 @@
       link.setAttribute("href", link.href);
     });
 
-    document.querySelectorAll("[data-home-audio][src]").forEach(function (audio) {
+    document.querySelectorAll("[data-home-audio][src], [data-music-audio][src]").forEach(function (audio) {
       audio.setAttribute("src", audio.src);
     });
   }
@@ -85,6 +85,64 @@
       } else {
         audio.pause();
       }
+    });
+  }
+
+  function initMusicPlayers() {
+    document.querySelectorAll("[data-music-player]").forEach(function (player) {
+      var audio = player.querySelector("[data-music-audio]");
+      var playButton = player.querySelector("[data-music-play]");
+      var pauseButton = player.querySelector("[data-music-pause]");
+      var stopButton = player.querySelector("[data-music-stop]");
+      var volume = player.querySelector("[data-music-volume]");
+      var status = player.querySelector("[data-music-status]");
+
+      if (!audio || !playButton || !pauseButton || !stopButton) {
+        return;
+      }
+
+      if (player.dataset.musicReady === "true") {
+        return;
+      }
+
+      player.dataset.musicReady = "true";
+
+      if (volume) {
+        audio.volume = Number(volume.value);
+        volume.addEventListener("input", function () {
+          audio.volume = Number(volume.value);
+        });
+      }
+
+      function setStatus(message) {
+        if (status) {
+          status.textContent = message;
+        }
+      }
+
+      playButton.addEventListener("click", function () {
+        audio.play().then(function () {
+          setStatus("再生中");
+        }).catch(function () {
+          setStatus("再生できませんでした");
+        });
+      });
+
+      pauseButton.addEventListener("click", function () {
+        audio.pause();
+        setStatus("一時停止中");
+      });
+
+      stopButton.addEventListener("click", function () {
+        audio.pause();
+        audio.currentTime = 0;
+        setStatus("停止中");
+      });
+
+      audio.addEventListener("ended", function () {
+        audio.currentTime = 0;
+        setStatus("停止中");
+      });
     });
   }
 
@@ -175,6 +233,7 @@
     }
 
     initHomeAudio();
+    initMusicPlayers();
   }
 
   function replacePage(nextDocument, url, addHistory) {
@@ -255,6 +314,7 @@
     }
 
     initHomeAudio();
+    initMusicPlayers();
     initPersistentNavigation();
   });
 })();

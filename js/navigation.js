@@ -15,6 +15,7 @@
     { label: "組織", path: "organizations/index.html" },
     { label: "施設", path: "facilities/index.html" },
     { label: "用語集", path: "glossary/index.html" },
+    { label: "音楽", path: "music/index.html" },
     { label: "小説", path: "novels/index.html" }
   ];
 
