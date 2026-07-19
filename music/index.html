@@ -72,6 +72,22 @@
           </label>
           <p class="template-note" role="status" aria-live="polite" data-music-status>停止中</p>
         </article>
+        <article class="lore-panel" data-music-player>
+          <p class="eyebrow">Music Archive</p>
+          <h2>Ⅱ. Carmen Tabernae</h2>
+          <p>ソルグランデ音楽資料に収録された楽曲。</p>
+          <audio id="carmen-tabernae-audio" src="../assets/audio/Carmen%20Tabernae.mp3" preload="metadata" data-music-audio></audio>
+          <div class="card-grid card-grid--three" aria-label="Carmen Tabernae 再生操作">
+            <button class="button button--primary" type="button" aria-controls="carmen-tabernae-audio" data-music-play>再生</button>
+            <button class="button button--ghost" type="button" aria-controls="carmen-tabernae-audio" data-music-pause>一時停止</button>
+            <button class="button button--ghost" type="button" aria-controls="carmen-tabernae-audio" data-music-stop>停止</button>
+          </div>
+          <label class="hero-audio__volume">
+            <span>音量</span>
+            <input type="range" min="0" max="1" step="0.05" value="0.7" aria-label="Ⅱ. Carmen Tabernaeの音量" data-music-volume>
+          </label>
+          <p class="template-note" role="status" aria-live="polite" data-music-status>停止中</p>
+        </article>
       </div>
     </section>
   </main>
