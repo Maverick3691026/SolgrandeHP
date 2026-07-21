@@ -137,6 +137,30 @@
   margin: 0;
 }
 
+.site-footer__legal {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(226, 207, 145, 0.12);
+  font-size: 0.82rem;
+}
+
+.site-footer__legal a {
+  color: var(--color-muted);
+}
+
+.site-footer__legal a:hover,
+.site-footer__legal a:focus-visible {
+  color: var(--color-gold-soft);
+}
+
+.site-footer__legal p {
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   .site-header__inner {
     min-height: 68px;

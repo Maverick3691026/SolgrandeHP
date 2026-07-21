@@ -71,6 +71,24 @@
     siteBrand.setAttribute("href", getSiteRoot() + "index.html");
   }
 
+  function renderFooterLegal() {
+    var footerInner = document.querySelector(".site-footer__inner");
+    var legal = document.querySelector(".site-footer__legal");
+
+    if (!footerInner) {
+      return;
+    }
+
+    if (!legal) {
+      legal = document.createElement("div");
+      legal.className = "site-footer__legal";
+      footerInner.appendChild(legal);
+    }
+
+    legal.innerHTML = '<a href="' + getSiteRoot() + 'copyright.html">著作権・利用について</a>'
+      + '<p>© SOLGRANDE. All rights reserved.</p>';
+  }
+
   function setCurrentNavigation() {
     var currentPath = normalizePath(window.location.pathname);
     var links = document.querySelectorAll(".site-nav a");
@@ -116,6 +134,7 @@
     init: function () {
       updateSiteBrandLink();
       renderNavigation();
+      renderFooterLegal();
       setCurrentNavigation();
       initMobileNavigation();
     }
