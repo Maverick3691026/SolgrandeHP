@@ -140,6 +140,11 @@
   font-size: clamp(2.8rem, 8vw, 5.8rem);
 }
 
+.page-hero .copyright-title {
+  font-size: clamp(1.25rem, 5vw, 3rem);
+  white-space: nowrap;
+}
+
 .page-hero p {
   max-width: 760px;
   color: var(--color-muted);

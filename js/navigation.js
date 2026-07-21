@@ -85,8 +85,12 @@
       footerInner.appendChild(legal);
     }
 
-    legal.innerHTML = '<a href="' + getSiteRoot() + 'copyright.html">著作権・利用について</a>'
-      + '<p>© SOLGRANDE. All rights reserved.</p>';
+    legal.innerHTML = '<a href="' + getSiteRoot() + 'copyright.html">著作権・コンテンツ利用方針</a>'
+      + '<div class="site-footer__legal-copy">'
+      + '<p>© 2026 Malyne. All Rights Reserved.</p>'
+      + '<p>当サイトの文章、設定、画像、イラストその他のコンテンツについて、無断転載、複製、改変、再配布、商用利用および生成AI・機械学習への利用を禁止します。</p>'
+      + '<p>法令上認められる適正な引用を除き、使用を希望する場合は事前にお問い合わせください。</p>'
+      + '</div>';
   }
 
   function setCurrentNavigation() {

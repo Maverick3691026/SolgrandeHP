@@ -161,6 +161,13 @@
   margin: 0;
 }
 
+.site-footer__legal-copy {
+  display: grid;
+  max-width: 52rem;
+  gap: 0.35rem;
+  line-height: 1.7;
+}
+
 @media (max-width: 760px) {
   .site-header__inner {
     min-height: 68px;
