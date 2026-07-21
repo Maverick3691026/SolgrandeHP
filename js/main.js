@@ -215,6 +215,81 @@
     }, Promise.resolve());
   }
 
+  function initMonsterDatabase() {
+    var root = document.querySelector(".monster-database");
+    var query = document.querySelector("[data-monster-search]");
+    var type = document.querySelector("[data-monster-type]");
+    var sort = document.querySelector("[data-monster-sort]");
+    var reset = document.querySelector("[data-monster-reset]");
+    var count = document.querySelector("[data-monster-count]");
+    var empty = document.querySelector("[data-monster-empty]");
+    var grid;
+    var cards;
+
+    if (!root || !query || !type || !sort || !reset || !count || !empty) {
+      return;
+    }
+
+    grid = root.querySelector(".monster-grid");
+    cards = Array.prototype.slice.call(root.querySelectorAll(".monster-card")).map(function (card, index) {
+      var nameNode = card.querySelector("h3");
+      var classification = card.querySelector(".person-card__meta div:first-child dd");
+
+      return {
+        element: card,
+        index: index,
+        name: nameNode ? nameNode.textContent.trim() : "",
+        type: classification ? classification.textContent.trim() : "",
+        searchText: card.textContent.normalize("NFKC").toLowerCase()
+      };
+    });
+
+    function update() {
+      var keyword = query.value.trim().normalize("NFKC").toLowerCase();
+      var selectedType = type.value;
+      var visibleCount = 0;
+      var ordered = cards.slice();
+
+      if (sort.value === "name") {
+        ordered.sort(function (a, b) {
+          return a.name.localeCompare(b.name, "ja");
+        });
+      } else {
+        ordered.sort(function (a, b) {
+          return a.index - b.index;
+        });
+      }
+
+      ordered.forEach(function (card) {
+        var matchesKeyword = !keyword || card.searchText.indexOf(keyword) !== -1;
+        var matchesType = !selectedType || card.type === selectedType;
+        var visible = matchesKeyword && matchesType;
+
+        card.element.hidden = !visible;
+        grid.appendChild(card.element);
+        if (visible) {
+          visibleCount += 1;
+        }
+      });
+
+      count.textContent = visibleCount + " / " + cards.length + "体";
+      empty.hidden = visibleCount !== 0;
+    }
+
+    query.addEventListener("input", update);
+    type.addEventListener("change", update);
+    sort.addEventListener("change", update);
+    reset.addEventListener("click", function () {
+      query.value = "";
+      type.value = "";
+      sort.value = "appearance";
+      update();
+      query.focus();
+    });
+
+    update();
+  }
+
   function reinitializePage() {
     if (window.SolgrandeNavigation) {
       window.SolgrandeNavigation.init();
@@ -234,6 +309,7 @@
 
     initHomeAudio();
     initMusicPlayers();
+    initMonsterDatabase();
   }
 
   function replacePage(nextDocument, url, addHistory) {
@@ -315,6 +391,7 @@
 
     initHomeAudio();
     initMusicPlayers();
+    initMonsterDatabase();
     initPersistentNavigation();
   });
 })();

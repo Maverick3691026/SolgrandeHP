@@ -16,11 +16,20 @@
   }
 
   function uniqueValues(key) {
-    return people
-      .map(function (person) { return person[key]; })
+    var values = people
+      .reduce(function (result, person) {
+        var personValues = key === "occupation"
+          ? String(person[key] || "").split("・")
+          : [person[key]];
+
+        return result.concat(personValues.map(function (value) {
+          return String(value || "").trim();
+        }));
+      }, [])
       .filter(Boolean)
-      .filter(function (value, index, values) { return values.indexOf(value) === index; })
-      .sort(function (a, b) { return a.localeCompare(b, "ja-JP"); });
+      .filter(function (value, index, allValues) { return allValues.indexOf(value) === index; });
+
+    return values.sort(function (a, b) { return a.localeCompare(b, "ja-JP"); });
   }
 
   function fillSelect(select, values) {
@@ -63,7 +72,9 @@
     return (!state.query || queryTarget.indexOf(normalize(state.query)) !== -1)
       && (!state.nation || person.nation === state.nation)
       && (!state.race || person.race === state.race)
-      && (!state.occupation || person.occupation === state.occupation)
+      && (!state.occupation || String(person.occupation || "").split("・").map(function (value) {
+        return value.trim();
+      }).indexOf(state.occupation) !== -1)
       && (!state.attribute || person.attribute === state.attribute);
   }
 

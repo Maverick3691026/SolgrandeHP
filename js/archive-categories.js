@@ -167,6 +167,7 @@
         ["剣術流派", "剣術の技法と理念を体系化し、師から弟子へ受け継がれる流派。", "sword-schools/index.html"],
         ["長さ表記", "ティル、リーヴ、ガルナ、ヴェルドから成る長さ・距離単位。", "entries/length-units.html"],
         ["速度表記", "一定時間内に進む距離によって速度を表すための表記法。", "entries/speed-notation.html"],
+        ["ソルグランデの果物①", "ソルグランデに存在する14種類の果実と、その効能や用途、風味。", "entries/solgrande-fruits-01.html"],
         ["英雄クラウス物語 上巻", "ブレノリア大陸に伝わるおとぎ話。英雄クラウスの誕生を描く。", "entries/hero-klaus-upper.html"]
       ]
     }
@@ -211,6 +212,116 @@
     });
   }
 
+  function initIndexSearch(category) {
+    var index = document.querySelector(".lore-index");
+    var panel = index ? index.querySelector(":scope > .lore-panel") : null;
+    var list = index ? index.querySelector(".entry-list") : null;
+    var items;
+    var controls;
+    var query;
+    var sort;
+    var reset;
+    var count;
+    var empty;
+
+    if (!index || !panel || !list || panel.querySelector("[data-archive-search]")) {
+      return;
+    }
+
+    items = Array.prototype.slice.call(list.querySelectorAll(":scope > .entry-item")).map(function (item, itemIndex) {
+      var title = item.querySelector("h3");
+      return {
+        element: item,
+        index: itemIndex,
+        name: title ? title.textContent.trim() : "",
+        searchText: item.textContent.normalize("NFKC").toLowerCase()
+      };
+    });
+
+    if (!items.length) {
+      return;
+    }
+
+    if (panel.querySelector("h2")) {
+      panel.querySelector("h2").textContent = category.label + "検索";
+    }
+    if (panel.querySelector("p")) {
+      panel.querySelector("p").textContent = "名前や説明を横断して" + category.label + "資料を探すための索引です。";
+    }
+
+    controls = document.createElement("div");
+    controls.className = "archive-search-controls";
+    controls.innerHTML =
+      '<div class="people-control">' +
+        '<label for="archive-search">名前・説明検索</label>' +
+        '<input id="archive-search" type="search" placeholder="名前・説明で検索" data-archive-search>' +
+      '</div>' +
+      '<div class="people-control">' +
+        '<label for="archive-sort">並び替え</label>' +
+        '<select id="archive-sort" data-archive-sort>' +
+          '<option value="appearance">掲載順</option>' +
+          '<option value="name">名前順</option>' +
+        '</select>' +
+      '</div>' +
+      '<button class="button button--ghost people-reset" type="button" data-archive-reset>条件をリセット</button>';
+    panel.appendChild(controls);
+
+    count = document.createElement("p");
+    count.className = "people-count archive-search-count";
+    count.setAttribute("data-archive-count", "");
+    list.parentNode.insertBefore(count, list);
+
+    empty = document.createElement("p");
+    empty.className = "people-empty";
+    empty.setAttribute("data-archive-empty", "");
+    empty.hidden = true;
+    list.parentNode.insertBefore(empty, list.nextSibling);
+
+    query = controls.querySelector("[data-archive-search]");
+    sort = controls.querySelector("[data-archive-sort]");
+    reset = controls.querySelector("[data-archive-reset]");
+
+    function update() {
+      var keyword = query.value.trim().normalize("NFKC").toLowerCase();
+      var ordered = items.slice();
+      var visibleCount = 0;
+
+      if (sort.value === "name") {
+        ordered.sort(function (a, b) {
+          return a.name.localeCompare(b.name, "ja");
+        });
+      } else {
+        ordered.sort(function (a, b) {
+          return a.index - b.index;
+        });
+      }
+
+      ordered.forEach(function (item) {
+        var visible = !keyword || item.searchText.indexOf(keyword) !== -1;
+        item.element.hidden = !visible;
+        list.appendChild(item.element);
+        if (visible) {
+          visibleCount += 1;
+        }
+      });
+
+      count.textContent = visibleCount + " / " + items.length + "件";
+      empty.textContent = "条件に一致する" + category.label + "資料が見つかりません。";
+      empty.hidden = visibleCount !== 0;
+    }
+
+    query.addEventListener("input", update);
+    sort.addEventListener("change", update);
+    reset.addEventListener("click", function () {
+      query.value = "";
+      sort.value = "appearance";
+      update();
+      query.focus();
+    });
+
+    update();
+  }
+
   function init() {
     var category = getCategory();
 
@@ -220,6 +331,7 @@
 
     renderIndex(category);
     renderTemplate(category);
+    initIndexSearch(category);
   }
 
   window.SolgrandeArchiveCategories = {
