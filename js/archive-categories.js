@@ -5,7 +5,7 @@
     world: {
       label: "世界観",
       eyebrow: "World Foundation",
-      description: "大陸、神話、暦、信仰、魔力の流れ。SOLGRANDEの全資料へ通じる基礎領域です。",
+      description: "大陸、神話、暦、信仰、魔力の流れ。Old Unknownの全資料へ通じる基礎領域です。",
       panelTitle: "世界設定の基礎",
       panelText: "地理、暦、自然法則、神話、魔力など、他カテゴリの前提になる情報を整理します。",
       entries: [
@@ -17,7 +17,7 @@
     nations: {
       label: "国家",
       eyebrow: "Realms and Crowns",
-      description: "王権、同盟、紋章、国境線。SOLGRANDEに存在する諸国家と勢力を記録します。",
+      description: "王権、同盟、紋章、国境線。エラムノーバに存在する諸国家と勢力を記録します。",
       panelTitle: "国家資料の型",
       panelText: "統治体制、首都、文化、軍制、歴史、関連人物を同じ形式で整理します。",
       entries: [
@@ -29,7 +29,7 @@
     people: {
       label: "人物",
       eyebrow: "People Archive",
-      description: "王族、英雄、魔術師、職人、語り部。SOLGRANDEの歴史と事件を動かす人物資料を収録します。",
+      description: "王族、英雄、魔術師、職人、語り部。エラムノーバの歴史と事件を動かす人物資料を収録します。",
       panelTitle: "人物資料の型",
       panelText: "プロフィール、紹介、来歴、関係性、登場話を固定項目にして、人物ページを増やしやすくします。",
       entries: [
@@ -163,11 +163,11 @@
       panelTitle: "索引資料の型",
       panelText: "読み、分類、関連カテゴリ、初出、解説を揃え、1000ページ規模の回遊を支えます。",
       entries: [
-        ["ヴィアラ", "ソルグランデ全土で広く流通している共通通貨。", "entries/viala.html"],
+        ["ヴィアラ", "エラムノーバ全土で広く流通している共通通貨。", "entries/viala.html"],
         ["剣術流派", "剣術の技法と理念を体系化し、師から弟子へ受け継がれる流派。", "sword-schools/index.html"],
         ["長さ表記", "ティル、リーヴ、ガルナ、ヴェルドから成る長さ・距離単位。", "entries/length-units.html"],
         ["速度表記", "一定時間内に進む距離によって速度を表すための表記法。", "entries/speed-notation.html"],
-        ["ソルグランデの果物①", "ソルグランデに存在する14種類の果実と、その効能や用途、風味。", "entries/solgrande-fruits-01.html"],
+        ["エラムノーバの果物①", "エラムノーバに存在する14種類の果実と、その効能や用途、風味。", "entries/solgrande-fruits-01.html"],
         ["英雄クラウス物語 上巻", "ブレノリア大陸に伝わるおとぎ話。英雄クラウスの誕生を描く。", "entries/hero-klaus-upper.html"]
       ]
     }
