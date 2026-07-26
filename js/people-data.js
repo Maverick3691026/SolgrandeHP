@@ -115,6 +115,25 @@
       appearanceOrder: 12,
       image: "../assets/people/portrait-rin-seriol.png",
       detailUrl: "entries/rin-seriol.html"
+    },
+    {
+      id: "mord-barski",
+      name: "モルド・バースキー",
+      englishName: "Mord Barski",
+      age: 46,
+      gender: "男性",
+      race: "人族",
+      origin: "エイジェルトン",
+      residence: "ツァダル",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "店主",
+      attribute: "",
+      epithet: "",
+      specialty: "創作料理・利き酒",
+      appearanceOrder: 13,
+      image: "../assets/people/portrait-mord-barski.png",
+      detailUrl: "entries/mord-barski.html"
     }
   ];
 })();
