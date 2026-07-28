@@ -11,6 +11,7 @@
     { label: "名所", path: "landmarks/index.html" },
     { label: "歴史", path: "history/index.html" },
     { label: "種族", path: "races/index.html" },
+    { label: "職業", path: "professions/index.html" },
     { label: "アイテム", path: "items/index.html" },
     { label: "組織", path: "organizations/index.html" },
     { label: "施設", path: "facilities/index.html" },
