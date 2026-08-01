@@ -86,6 +86,7 @@
       panelTitle: "場所資料の型",
       panelText: "位置、管理者、来歴、関連事件、近隣施設を揃えて、地理資料と相互参照しやすくします。",
       entries: [
+        ["愚者の山脈", "ブレノリア大陸を横断する広大な山脈の一部。", "entries/fools-mountains.html"],
         ["ネグレイア湖", "創造神リヴィアーナの加護が残る、山脈に抱かれた高山湖。", "entries/lake-negreia.html"]
       ]
     },
