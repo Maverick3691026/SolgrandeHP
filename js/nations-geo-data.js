@@ -242,6 +242,18 @@
         image: "../assets/nations/zelkadia-00.png",
         detailUrl: "entries/zelkadia-great-empire.html",
         order: 20
+      },
+      {
+        id: "demon-king-domain",
+        name: "魔王領",
+        englishName: "",
+        type: "未設定",
+        capital: "未設定",
+        government: "未設定",
+        mainRace: "未設定",
+        image: "",
+        detailUrl: "",
+        order: 21
       }
     ],
     regions: [
@@ -255,7 +267,7 @@
         order: 1
       }
     ],
-    settlements: [
+    locations: [
       {
         id: "tsadar-capital",
         nationId: "belmosia-principality",
@@ -268,6 +280,45 @@
         image: "../assets/nations/settlement-tsadar.png",
         detailUrl: "entries/tsadar-capital.html",
         order: 1
+      },
+      {
+        id: "finridge-village",
+        nationId: "belmosia-principality",
+        regionId: "",
+        name: "フィンリッジ村",
+        englishName: "",
+        type: "村",
+        role: "未設定",
+        population: "未設定",
+        image: "",
+        detailUrl: "entries/finridge-village.html",
+        order: 2
+      },
+      {
+        id: "eigelton",
+        nationId: "belmosia-principality",
+        regionId: "",
+        name: "エイジェルトン",
+        englishName: "",
+        type: "都市",
+        role: "未設定",
+        population: "未設定",
+        image: "",
+        detailUrl: "entries/eigelton.html",
+        order: 3
+      },
+      {
+        id: "dorgaf-village",
+        nationId: "belmosia-principality",
+        regionId: "",
+        name: "ドルガフ村",
+        englishName: "",
+        type: "村",
+        role: "未設定",
+        population: "未設定",
+        image: "",
+        detailUrl: "entries/dorgaf-village.html",
+        order: 4
       }
     ]
   };

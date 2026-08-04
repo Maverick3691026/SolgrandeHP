@@ -864,6 +864,36 @@
   font-size: clamp(2.2rem, 3.5vw, 3rem);
 }
 
+.nation-portal__group {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.nation-portal__group > h3 {
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+.nation-portal__grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+}
+
+.nation-location-card {
+  min-height: 7rem;
+}
+
+.nation-location-card .person-card__body {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nation-location-card.is-current {
+  border-color: rgba(226, 207, 145, 0.62);
+  box-shadow: inset 0 0 0 1px rgba(226, 207, 145, 0.22);
+}
+
+
 .currency-hero__visual {
   max-width: 560px;
   aspect-ratio: 16 / 10;

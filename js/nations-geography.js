@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var data = window.SolgrandeGeographyData || { nations: [], regions: [], settlements: [] };
+  var data = window.SolgrandeGeographyData || { nations: [], regions: [], locations: [] };
   var state = {
     query: "",
     nationId: "",
@@ -174,7 +174,7 @@
   }
 
   function getSettlements() {
-    return data.settlements
+    return data.locations
       .filter(function (settlement) { return settlement.regionId === state.regionId; })
       .sort(function (a, b) {
         return Number(a.order || 0) - Number(b.order || 0)

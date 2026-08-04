@@ -307,6 +307,10 @@
       window.SolgrandeNationsGeography.init();
     }
 
+    if (window.SolgrandeNationPortal) {
+      window.SolgrandeNationPortal.init();
+    }
+
     initHomeAudio();
     initMusicPlayers();
     initMonsterDatabase();
