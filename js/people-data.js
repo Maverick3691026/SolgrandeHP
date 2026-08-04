@@ -134,6 +134,25 @@
       appearanceOrder: 13,
       image: "../assets/people/portrait-mord-barski.png",
       detailUrl: "entries/mord-barski.html"
+    },
+    {
+      id: "kieval-lioncourt",
+      name: "キーヴァル・リオンコート",
+      englishName: "Kieval Lioncourt",
+      age: 24,
+      gender: "男性",
+      race: "人族",
+      origin: "フィンリッジ村",
+      residence: "フィンリッジ村",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国 / 自警団",
+      occupation: "自警団員",
+      attribute: "",
+      epithet: "",
+      specialty: "剣術・体術",
+      appearanceOrder: 14,
+      image: "../assets/people/portrait-kieval-lioncourt.png",
+      detailUrl: "entries/kieval-lioncourt.html"
     }
   ];
 })();

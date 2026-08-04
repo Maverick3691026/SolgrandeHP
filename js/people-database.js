@@ -8,7 +8,7 @@
     race: "",
     occupation: "",
     attribute: "",
-    sort: "appearance"
+    sort: "name"
   };
 
   function normalize(value) {
@@ -190,14 +190,14 @@
       state.race = "";
       state.occupation = "";
       state.attribute = "";
-      state.sort = "appearance";
+      state.sort = "name";
 
       controls.query.value = "";
       controls.nation.value = "";
       controls.race.value = "";
       controls.occupation.value = "";
       controls.attribute.value = "";
-      controls.sort.value = "appearance";
+      controls.sort.value = "name";
       render(controls);
     });
   }
@@ -214,13 +214,13 @@
     state.race = "";
     state.occupation = "";
     state.attribute = "";
-    state.sort = "appearance";
+    state.sort = "name";
     controls.query.value = "";
     controls.nation.innerHTML = '<option value="">すべて</option>';
     controls.race.innerHTML = '<option value="">すべて</option>';
     controls.occupation.innerHTML = '<option value="">すべて</option>';
     controls.attribute.innerHTML = '<option value="">すべて</option>';
-    controls.sort.value = "appearance";
+    controls.sort.value = "name";
 
     fillSelect(controls.nation, uniqueValues("nation"));
     fillSelect(controls.race, uniqueValues("race"));
