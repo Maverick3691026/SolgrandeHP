@@ -451,6 +451,29 @@
   text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
 }
 
+.page-hero--finridge {
+  min-height: clamp(25rem, 52vw, 42rem);
+  display: grid;
+  align-items: end;
+  background:
+    linear-gradient(90deg, rgba(7, 9, 16, 0.92) 0%, rgba(7, 9, 16, 0.58) 46%, rgba(7, 9, 16, 0.16) 100%),
+    linear-gradient(180deg, rgba(7, 9, 16, 0.04) 0%, rgba(7, 9, 16, 0.84) 100%),
+    url("../assets/nations/finridge-village-00.png") center 45% / cover no-repeat;
+}
+
+.page-hero--finridge .page-hero__inner {
+  padding-bottom: clamp(1rem, 3vw, 2.5rem);
+}
+
+.page-hero--finridge h1 {
+  text-shadow: 0 0.2rem 1.4rem rgba(0, 0, 0, 0.82);
+}
+
+.page-hero--finridge p {
+  color: rgba(246, 242, 232, 0.92);
+  text-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.88);
+}
+
 .page-hero--kazandor {
   min-height: clamp(25rem, 52vw, 42rem);
   display: grid;
