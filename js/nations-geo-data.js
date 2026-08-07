@@ -161,7 +161,7 @@
       },
       {
         id: "milvart-marquisate",
-        name: "ミルヴァート候領",
+        name: "ミルバート候領",
         englishName: "",
         type: "候領",
         capital: "未設定",
