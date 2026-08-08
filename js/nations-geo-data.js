@@ -18,7 +18,7 @@
       {
         id: "kazandor-mining-city",
         name: "鉱山都市カザンドール",
-        englishName: "",
+        englishName: "Mithril Throne of Kazandor",
         type: "都市国家",
         capital: "ベルリズトゥール",
         government: "都市国家",
@@ -30,9 +30,9 @@
       {
         id: "tarenfall-fortress-principality",
         name: "タレンフォール要塞公国",
-        englishName: "",
+        englishName: "Fortress Duchy of Tarrenfall",
         type: "要塞公国",
-        capital: "未設定",
+        capital: "シャールカタフ",
         government: "公国制",
         mainRace: "未設定",
         image: "",
