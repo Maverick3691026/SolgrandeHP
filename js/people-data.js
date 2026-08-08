@@ -153,6 +153,25 @@
       appearanceOrder: 14,
       image: "../assets/people/portrait-kieval-lioncourt.png",
       detailUrl: "entries/kieval-lioncourt.html"
+    },
+    {
+      id: "arvhel-lioncourt",
+      name: "アーヴェル・リオンコート",
+      englishName: "Arvhel Lioncourt",
+      age: "",
+      gender: "男性",
+      race: "人族",
+      origin: "フィンリッジ村",
+      residence: "フィンリッジ村",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "冒険者",
+      attribute: "",
+      epithet: "",
+      specialty: "料理・アクセサリー作り・動物やモンスターの扱い",
+      appearanceOrder: 15,
+      image: "../assets/people/portrait-arvhel-lioncourt.png",
+      detailUrl: "entries/arvhel-lioncourt.html"
     }
   ];
 })();

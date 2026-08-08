@@ -20,7 +20,7 @@
         name: "鉱山都市カザンドール",
         englishName: "Mithril Throne of Kazandor",
         type: "都市国家",
-        capital: "ベルリズトゥール",
+        capital: "ベルリーズトゥール（Belulieztur）",
         government: "都市国家",
         mainRace: "ドワーフ",
         image: "../assets/nations/kazandor-00.png",
