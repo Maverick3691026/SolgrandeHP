@@ -181,6 +181,24 @@
       appearanceOrder: 16,
       image: "../assets/people/portrait-tora-harland.png",
       detailUrl: "entries/tora-harland.html"
+    },
+    {
+      id: "milica-lioncourt",
+      name: "ミリカ・リオンコート",
+      englishName: "Milica Lioncourt",
+      gender: "女性",
+      race: "人族",
+      origin: "フィンリッジ村",
+      residence: "フィンリッジ村",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "",
+      attribute: "",
+      epithet: "",
+      specialty: "木登り・家事・剣術",
+      appearanceOrder: 17,
+      image: "../assets/people/portrait-milica-lioncourt.png",
+      detailUrl: "entries/milica-lioncourt.html"
     }
   ];
 })();
