@@ -86,9 +86,6 @@
         return a.name.localeCompare(b.name, "ja-JP");
       }
 
-      if (state.sort === "age") {
-        return Number(a.age || 0) - Number(b.age || 0) || a.name.localeCompare(b.name, "ja-JP");
-      }
 
       if (state.sort === "nation") {
         return String(a.nation || "").localeCompare(String(b.nation || ""), "ja-JP")
