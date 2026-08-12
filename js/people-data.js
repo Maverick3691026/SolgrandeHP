@@ -54,6 +54,7 @@
       specialty: "薬草識別・薬学・錬金術",
       appearanceOrder: 9,
       image: "../assets/people/portrait-hiram-grun.png",
+      pending: true,
       detailUrl: "entries/hiram-grun.html"
     },
     {
@@ -108,6 +109,7 @@
       specialty: "氷旋流剣術・リュートの弾き語り",
       appearanceOrder: 12,
       image: "../assets/people/portrait-rin-seriol.png",
+      pending: true,
       detailUrl: "entries/rin-seriol.html"
     },
     {
@@ -126,6 +128,7 @@
       specialty: "創作料理・利き酒",
       appearanceOrder: 13,
       image: "../assets/people/portrait-mord-barski.png",
+      pending: true,
       detailUrl: "entries/mord-barski.html"
     },
     {

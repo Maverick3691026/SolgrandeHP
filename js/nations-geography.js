@@ -44,7 +44,15 @@
   }
 
   function createButtonCard(item, type, isSelected) {
-    var button = item.detailUrl ? document.createElement("a") : document.createElement("button");
+    var publishedNationIds = [
+      "belmosia-principality",
+      "kazandor-mining-city",
+      "tarenfall-fortress-principality"
+    ];
+    var isPending = type === "nation" && publishedNationIds.indexOf(item.id) === -1;
+    var button = isPending
+      ? document.createElement("div")
+      : item.detailUrl ? document.createElement("a") : document.createElement("button");
     var body = document.createElement("div");
     var label = document.createElement("p");
     var title = document.createElement("h3");
@@ -53,7 +61,13 @@
     var image;
 
     button.className = "person-card geo-card";
-    if (item.detailUrl) {
+    if (isPending) {
+      button.classList.add("person-card--pending");
+      button.setAttribute("aria-label", item.name + "は準備中です");
+      button.setAttribute("aria-disabled", "true");
+      button.setAttribute("tabindex", "0");
+      button.dataset.tooltip = "準備中";
+    } else if (item.detailUrl) {
       button.href = item.detailUrl;
       button.setAttribute("aria-label", item.name + "の詳細ページへ");
     } else {
@@ -62,7 +76,7 @@
       button.dataset.geoId = item.id;
     }
 
-    if (isSelected) {
+    if (isSelected && !isPending) {
       button.classList.add("is-selected");
     }
 

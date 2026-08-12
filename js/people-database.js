@@ -113,7 +113,7 @@
   }
 
   function createCard(person) {
-    var card = document.createElement("a");
+    var card = document.createElement(person.pending ? "div" : "a");
     var figure = document.createElement("figure");
     var image = document.createElement("img");
     var body = document.createElement("div");
@@ -122,8 +122,16 @@
     var meta = document.createElement("dl");
 
     card.className = "person-card";
-    card.href = person.detailUrl;
-    card.setAttribute("aria-label", person.name + "の詳細ページへ");
+    if (person.pending) {
+      card.classList.add("person-card--pending");
+      card.setAttribute("aria-label", person.name + "は準備中です");
+      card.setAttribute("aria-disabled", "true");
+      card.setAttribute("tabindex", "0");
+      card.dataset.tooltip = "準備中";
+    } else {
+      card.href = person.detailUrl;
+      card.setAttribute("aria-label", person.name + "の詳細ページへ");
+    }
 
     figure.className = "person-card__image";
     image.src = person.image;

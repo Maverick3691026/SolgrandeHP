@@ -897,6 +897,11 @@
   object-position: center bottom;
 }
 
+.person-hero__visual img[src$="full-milica-lioncourt.png"] {
+  transform: scale(1.1);
+  transform-origin: center bottom;
+}
+
 .person-hero__visual,
 .monster-hero__visual,
 .race-hero__visual,
@@ -1365,6 +1370,58 @@
   background: rgba(18, 25, 44, 0.92);
   border-color: rgba(226, 207, 145, 0.48);
   transform: translateY(-3px);
+}
+
+.person-card--pending {
+  position: relative;
+  cursor: not-allowed;
+}
+
+.person-card--pending:hover {
+  background: var(--color-panel);
+  border-color: var(--color-line);
+  transform: none;
+}
+
+.person-card--pending .person-card__image img {
+  filter: brightness(0.55) saturate(0.7);
+}
+
+.person-card--pending .person-card__body {
+  opacity: 0.62;
+}
+
+.person-card--pending::after {
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.65rem;
+  color: var(--color-night);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  content: attr(data-tooltip);
+  background: var(--color-gold-soft);
+  border-radius: 0.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0.3rem);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.person-card--pending:hover::after,
+.person-card--pending:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (hover: none) {
+  .person-card--pending::after {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .person-card__image {
