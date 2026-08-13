@@ -122,26 +122,26 @@
 
       playButton.addEventListener("click", function () {
         audio.play().then(function () {
-          setStatus("再生中");
+          setStatus(document.documentElement.lang === "en" ? "Playing" : "再生中");
         }).catch(function () {
-          setStatus("再生できませんでした");
+          setStatus(document.documentElement.lang === "en" ? "Unable to play" : "再生できませんでした");
         });
       });
 
       pauseButton.addEventListener("click", function () {
         audio.pause();
-        setStatus("一時停止中");
+        setStatus(document.documentElement.lang === "en" ? "Paused" : "一時停止中");
       });
 
       stopButton.addEventListener("click", function () {
         audio.pause();
         audio.currentTime = 0;
-        setStatus("停止中");
+        setStatus(document.documentElement.lang === "en" ? "Stopped" : "停止中");
       });
 
       audio.addEventListener("ended", function () {
         audio.currentTime = 0;
-        setStatus("停止中");
+        setStatus(document.documentElement.lang === "en" ? "Stopped" : "停止中");
       });
     });
   }

@@ -230,6 +230,100 @@
         ["Fools' Mountains", "Part of a vast mountain range crossing the continent."],
         ["Lake Negreia", "A high-altitude lake nestled among the mountains, where the blessing of the creator goddess Livianna remains."]
       ]
+    },
+    history: {
+      label: "History",
+      eyebrow: "Chronicles",
+      description: "Dynasties, wars, discoveries, and disasters, organized through timelines and historical records.",
+      panelTitle: "Historical Archive Format",
+      panelText: "Each entry records the event, period, nations involved, key figures, and extent of its influence.",
+      entries: [
+        ["Mythic Age", "A distant age remembered through tales of gods and ancient covenants."],
+        ["Age of Kingdom Formation", "The period in which the institutions and borders of modern nations took shape."],
+        ["Great War and Armistice", "Wars and treaties that led to the present balance of power."]
+      ]
+    },
+    races: {
+      label: "Races",
+      eyebrow: "Races and Peoples",
+      description: "Humans, elves, dwarves, orcs, beastfolk, oni, halflings, and the Laclot people—their cultures, physical traits, and homelands.",
+      panelTitle: "Race Archive Format",
+      panelText: "Each entry records origins, culture, language, lifespan, faith, and relationships with nations.",
+      entries: []
+    },
+    professions: {
+      label: "Professions",
+      eyebrow: "Professions",
+      description: "Occupations found throughout the world, organized by their roles and areas of expertise.",
+      panelTitle: "Profession Categories",
+      panelText: "The many professions supporting society, classified by role and field of expertise.",
+      entries: [
+        ["Combat", "Professions involving armed combat, protection, and escort duties."],
+        ["Production and Technical", "Professions involving material processing, manufacturing, construction, and technical work."],
+        ["Medical", "Professions supporting health through treatment, nursing, and medicine preparation."],
+        ["Commerce and Daily Life", "Professions supporting trade and the practical needs of everyday life."],
+        ["Academic and Religious", "Professions involving research, education, faith, and ritual practice."]
+      ]
+    },
+    items: {
+      label: "Items",
+      eyebrow: "Relics and Tools",
+      description: "Relics, weapons, tools, documents, and materials, recording the histories and locations of notable objects.",
+      panelTitle: "Item Archive Format",
+      panelText: "Each entry records its type, creator, location, effects, and related people.",
+      entries: [
+        ["Weapons and Armor", "Equipment appearing in wars and heroic tales."]
+      ]
+    },
+    organizations: {
+      label: "Organizations",
+      eyebrow: "Orders and Guilds",
+      description: "Orders, guilds, academies, and secret societies, recording groups with shared aims and their relationships.",
+      panelTitle: "Organization Archive Format",
+      panelText: "Each entry records its purpose, headquarters, leader, members, alliances, and rivalries.",
+      entries: [
+        ["Adventurers Guild", "An organization handling requests, adventurer registration, material purchases, and disaster response."],
+        ["Merchant Guild", "An economic organization of merchants, traders, artisans, and distributors supporting trade and markets."],
+        ["Judicial System", "Judicial organizations and state institutions maintaining law and protecting citizens through fair judgment."],
+        ["Slave Merchants", "State-authorized organizations handling slave contracts and transactions."],
+        ["Knightly Orders", "Armed organizations serving nations or faiths."],
+        ["Trading Companies and Associations", "Organizations influencing trade, professions, and urban administration."],
+        ["Academies and Research Institutions", "Scholarly organizations devoted to magic, history, and technology."]
+      ]
+    },
+    facilities: {
+      label: "Facilities",
+      eyebrow: "Facilities",
+      description: "Fortresses, temples, academies, ports, and markets—the structures and functions that support society.",
+      panelTitle: "Facility Archive Format",
+      panelText: "Each entry records its location, managing organization, function, history, and related events.",
+      entries: [
+        ["Military and Defense", "Fortresses, forts, barracks, and other facilities defending nations and regions."],
+        ["Religion and Ritual", "Temples, chapels, altars, and other facilities associated with faith and ritual."],
+        ["Education and Research", "Academies, libraries, laboratories, and other facilities devoted to learning and inquiry."],
+        ["Production and Workshops", "Forges, workshops, manufactories, and other facilities producing tools and supplies."],
+        ["Administration and Justice", "Government offices, courts, and other facilities supporting governance and law enforcement."],
+        ["Commerce and Markets", "Markets, shops, trading posts, and other places where goods and money change hands."],
+        ["Roads and Travel", "Roads, checkpoints, stations, and other facilities supporting travel and distribution."]
+      ]
+    },
+    glossary: {
+      label: "Glossary",
+      eyebrow: "Terminology Index",
+      description: "An index for searching proper names, titles, places, and magical terminology.",
+      panelTitle: "Glossary Entry Format",
+      panelText: "Each entry records its reading, category, related archive sections, first appearance, and explanation.",
+      entries: [
+        ["Heiramnova", "A planet with two moons, consisting of one continent and several island chains."],
+        ["Viala", "The common currency widely circulated throughout Heiramnova."],
+        ["Sword Schools", "Traditions that systematize sword techniques and philosophies and pass them from master to student."],
+        ["Length Notation", "A system of length and distance units comprising ティル, Riiv, ガルナ, and ヴェルド."],
+        ["Speed Notation", "A notation system expressing speed through distance traveled over a fixed period."],
+        ["Criminal Mark", "A mark placed on those convicted of crimes above a defined level of severity."],
+        ["Slave Mark", "A magical mark associated with a slave contract."],
+        ["Fruits of Heiramnova I", "Fourteen fruits found in Heiramnova, including their effects, uses, and flavors."],
+        ["The Tale of Hero Klaus: Volume I", "A folktale from the continent depicting the birth of the hero Klaus."]
+      ]
     }
   };
 

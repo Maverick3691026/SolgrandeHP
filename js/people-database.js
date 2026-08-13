@@ -148,7 +148,7 @@
   }
 
   function createCard(person) {
-    var isPending = person.pending || isEnglishPage();
+    var isPending = person.pending || (isEnglishPage() && person.id !== "sallis-lioncourt");
     var card = document.createElement(isPending ? "div" : "a");
     var figure = document.createElement("figure");
     var image = document.createElement("img");
@@ -167,8 +167,10 @@
       card.setAttribute("tabindex", "0");
       card.dataset.tooltip = isEnglishPage() ? "In preparation" : "準備中";
     } else {
-      card.href = resolveUrl(person.detailUrl);
-      card.setAttribute("aria-label", person.name + "の詳細ページへ");
+      card.href = isEnglishPage() ? person.detailUrl : resolveUrl(person.detailUrl);
+      card.setAttribute("aria-label", isEnglishPage()
+        ? "View the " + person.englishName + " details page"
+        : person.name + "の詳細ページへ");
     }
 
     figure.className = "person-card__image";

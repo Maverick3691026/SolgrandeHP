@@ -60,7 +60,8 @@
       "村": "Village",
       "都市": "City",
       "ツァダル（人口97,896人）": "Tsadar (population: 97,896)",
-      "ベルリーズトゥール（Belulieztur／人口34,065人）": "Belulieztur (population: 34,065)"
+      "ベルリーズトゥール（Belulieztur／人口34,065人）": "Belulieztur (population: 34,065)",
+      "シャールカタフ": "Skar'kataph"
     };
 
     if (!isEnglishPage()) {
@@ -72,6 +73,14 @@
 
   function resolveUrl(url) {
     return isEnglishPage() && url ? "../" + url : url;
+  }
+
+  function resolveDetailUrl(url) {
+    if (isEnglishPage() && url === "entries/Principality%20of%20Bermouthia.html") {
+      return url;
+    }
+
+    return isEnglishPage() && url ? "../../nations/" + url : url;
   }
 
   function collectControls() {
@@ -111,7 +120,7 @@
       "kazandor-mining-city",
       "tarenfall-fortress-principality"
     ];
-    var isPending = type === "nation" && (isEnglishPage() || publishedNationIds.indexOf(item.id) === -1);
+    var isPending = type === "nation" && publishedNationIds.indexOf(item.id) === -1;
     var button = isPending
       ? document.createElement("div")
       : item.detailUrl ? document.createElement("a") : document.createElement("button");
@@ -132,9 +141,9 @@
       button.setAttribute("tabindex", "0");
       button.dataset.tooltip = isEnglishPage() ? "In preparation" : "準備中";
     } else if (item.detailUrl) {
-      button.href = resolveUrl(item.detailUrl);
+      button.href = resolveDetailUrl(item.detailUrl);
       button.setAttribute("aria-label", isEnglishPage()
-        ? displayName(item) + " details"
+        ? displayName(item) + " details (Japanese)"
         : item.name + "の詳細ページへ");
     } else {
       button.type = "button";
@@ -193,7 +202,7 @@
     var meta = document.createElement("dl");
 
     card.className = "person-card nation-card";
-    card.href = resolveUrl(settlement.detailUrl);
+    card.href = resolveDetailUrl(settlement.detailUrl);
     card.setAttribute("aria-label", isEnglishPage()
       ? displayName(settlement) + " details"
       : settlement.name + "の詳細ページへ");
