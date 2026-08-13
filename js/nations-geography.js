@@ -12,6 +12,68 @@
     return String(value || "").trim().toLocaleLowerCase("ja-JP");
   }
 
+  function isEnglishPage() {
+    return document.documentElement.lang === "en";
+  }
+
+  function displayName(item) {
+    return isEnglishPage() ? (item.englishName || item.name) : item.name;
+  }
+
+  function displayLabel(item, fallback) {
+    if (!isEnglishPage()) {
+      return item.englishName || fallback;
+    }
+
+    return item.englishName ? item.name : "English name not set";
+  }
+
+  function translateValue(value) {
+    var translations = {
+      "公国": "Principality",
+      "都市国家": "City-state",
+      "要塞公国": "Fortress duchy",
+      "王国": "Kingdom",
+      "砂王国": "Desert kingdom",
+      "連邦": "Federation",
+      "共和国": "Republic",
+      "海峡王国": "Strait kingdom",
+      "候領": "Marquisate",
+      "帝国": "Empire",
+      "属領": "Dominion",
+      "自由都市": "Free city",
+      "大公国": "Grand principality",
+      "大帝国": "Great empire",
+      "公国制": "Principality",
+      "王政": "Monarchy",
+      "連邦制": "Federal system",
+      "共和制": "Republic",
+      "領邦制": "Territorial rule",
+      "帝政": "Imperial rule",
+      "属領統治": "Dominion administration",
+      "自治制": "Self-government",
+      "大公国制": "Grand principality",
+      "人族": "Human",
+      "ドワーフ": "Dwarf",
+      "首都圏": "Capital region",
+      "首都": "Capital",
+      "村": "Village",
+      "都市": "City",
+      "ツァダル（人口97,896人）": "Tsadar (population: 97,896)",
+      "ベルリーズトゥール（Belulieztur／人口34,065人）": "Belulieztur (population: 34,065)"
+    };
+
+    if (!isEnglishPage()) {
+      return value;
+    }
+
+    return translations[value] || value;
+  }
+
+  function resolveUrl(url) {
+    return isEnglishPage() && url ? "../" + url : url;
+  }
+
   function collectControls() {
     return {
       query: document.querySelector("[data-nations-search]"),
@@ -36,7 +98,7 @@
     var description = document.createElement("dd");
 
     term.textContent = label;
-    description.textContent = value || "未設定";
+    description.textContent = translateValue(value) || (isEnglishPage() ? "Not set" : "未設定");
     item.appendChild(term);
     item.appendChild(description);
 
@@ -49,7 +111,7 @@
       "kazandor-mining-city",
       "tarenfall-fortress-principality"
     ];
-    var isPending = type === "nation" && publishedNationIds.indexOf(item.id) === -1;
+    var isPending = type === "nation" && (isEnglishPage() || publishedNationIds.indexOf(item.id) === -1);
     var button = isPending
       ? document.createElement("div")
       : item.detailUrl ? document.createElement("a") : document.createElement("button");
@@ -63,13 +125,17 @@
     button.className = "person-card geo-card";
     if (isPending) {
       button.classList.add("person-card--pending");
-      button.setAttribute("aria-label", item.name + "は準備中です");
+      button.setAttribute("aria-label", isEnglishPage()
+        ? displayName(item) + " is in preparation"
+        : item.name + "は準備中です");
       button.setAttribute("aria-disabled", "true");
       button.setAttribute("tabindex", "0");
-      button.dataset.tooltip = "準備中";
+      button.dataset.tooltip = isEnglishPage() ? "In preparation" : "準備中";
     } else if (item.detailUrl) {
-      button.href = item.detailUrl;
-      button.setAttribute("aria-label", item.name + "の詳細ページへ");
+      button.href = resolveUrl(item.detailUrl);
+      button.setAttribute("aria-label", isEnglishPage()
+        ? displayName(item) + " details"
+        : item.name + "の詳細ページへ");
     } else {
       button.type = "button";
       button.dataset.geoType = type;
@@ -82,18 +148,18 @@
 
     body.className = "person-card__body";
     label.className = "archive-card__label";
-    label.textContent = item.englishName || type;
-    title.textContent = item.name;
+    label.textContent = displayLabel(item, type);
+    title.textContent = displayName(item);
     meta.className = "person-card__meta";
 
     if (type === "nation") {
-      meta.appendChild(createMeta("分類", item.type));
-      meta.appendChild(createMeta("首都", item.capital));
-      meta.appendChild(createMeta("統治体制", item.government));
-      meta.appendChild(createMeta("主要種族", item.mainRace));
+      meta.appendChild(createMeta(isEnglishPage() ? "Type" : "分類", item.type));
+      meta.appendChild(createMeta(isEnglishPage() ? "Capital" : "首都", item.capital));
+      meta.appendChild(createMeta(isEnglishPage() ? "Government" : "統治体制", item.government));
+      meta.appendChild(createMeta(isEnglishPage() ? "Primary race" : "主要種族", item.mainRace));
     } else {
-      meta.appendChild(createMeta("分類", item.type));
-      meta.appendChild(createMeta("地形", item.terrain));
+      meta.appendChild(createMeta(isEnglishPage() ? "Type" : "分類", item.type));
+      meta.appendChild(createMeta(isEnglishPage() ? "Terrain" : "地形", item.terrain));
     }
 
     body.appendChild(label);
@@ -103,8 +169,8 @@
       figure = document.createElement("figure");
       image = document.createElement("img");
       figure.className = "geo-card__image";
-      image.src = item.image;
-      image.alt = item.name + "の紋章";
+      image.src = resolveUrl(item.image);
+      image.alt = isEnglishPage() ? displayName(item) + " crest" : item.name + "の紋章";
       image.loading = "lazy";
       figure.appendChild(image);
       body.appendChild(figure);
@@ -127,23 +193,25 @@
     var meta = document.createElement("dl");
 
     card.className = "person-card nation-card";
-    card.href = settlement.detailUrl;
-    card.setAttribute("aria-label", settlement.name + "の詳細ページへ");
+    card.href = resolveUrl(settlement.detailUrl);
+    card.setAttribute("aria-label", isEnglishPage()
+      ? displayName(settlement) + " details"
+      : settlement.name + "の詳細ページへ");
 
     figure.className = "person-card__image nation-card__image";
-    image.src = settlement.image;
-    image.alt = settlement.name + "の拠点画像";
+    image.src = resolveUrl(settlement.image);
+    image.alt = isEnglishPage() ? displayName(settlement) + " image" : settlement.name + "の拠点画像";
     image.loading = "lazy";
     figure.appendChild(image);
 
     body.className = "person-card__body";
     label.className = "archive-card__label";
-    label.textContent = settlement.englishName || "Settlement";
-    title.textContent = settlement.name;
+    label.textContent = displayLabel(settlement, "Settlement");
+    title.textContent = displayName(settlement);
     meta.className = "person-card__meta";
-    meta.appendChild(createMeta("分類", settlement.type));
-    meta.appendChild(createMeta("役割", settlement.role));
-    meta.appendChild(createMeta("人口", settlement.population));
+    meta.appendChild(createMeta(isEnglishPage() ? "Type" : "分類", settlement.type));
+    meta.appendChild(createMeta(isEnglishPage() ? "Role" : "役割", settlement.role));
+    meta.appendChild(createMeta(isEnglishPage() ? "Population" : "人口", settlement.population));
 
     body.appendChild(label);
     body.appendChild(title);
@@ -205,7 +273,8 @@
     });
 
     controls.nationGrid.replaceChildren(fragment);
-    controls.nationCount.textContent = nations.length + " / " + data.nations.length + "国家";
+    controls.nationCount.textContent = nations.length + " / " + data.nations.length
+      + (isEnglishPage() ? " nations" : "国家");
     controls.empty.hidden = nations.length !== 0;
   }
 
@@ -219,8 +288,10 @@
     });
 
     controls.regionGrid.replaceChildren(fragment);
-    controls.regionCount.textContent = regions.length + "地域";
-    controls.selectedNation.textContent = selectedNation ? selectedNation.name : "国家未選択";
+    controls.regionCount.textContent = regions.length + (isEnglishPage() ? " regions" : "地域");
+    controls.selectedNation.textContent = selectedNation
+      ? displayName(selectedNation)
+      : isEnglishPage() ? "No nation selected" : "国家未選択";
     controls.regionPanel.hidden = !selectedNation || regions.length === 0;
   }
 
@@ -234,8 +305,10 @@
     });
 
     controls.settlementGrid.replaceChildren(fragment);
-    controls.settlementCount.textContent = settlements.length + "拠点";
-    controls.selectedRegion.textContent = selectedRegion ? selectedRegion.name : "地域未選択";
+    controls.settlementCount.textContent = settlements.length + (isEnglishPage() ? " locations" : "拠点");
+    controls.selectedRegion.textContent = selectedRegion
+      ? displayName(selectedRegion)
+      : isEnglishPage() ? "No region selected" : "地域未選択";
     controls.settlementPanel.hidden = !selectedRegion;
   }
 

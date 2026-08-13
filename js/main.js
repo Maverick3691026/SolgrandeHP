@@ -252,7 +252,7 @@
 
       if (sort.value === "name") {
         ordered.sort(function (a, b) {
-          return a.name.localeCompare(b.name, "ja");
+          return a.name.localeCompare(b.name, document.documentElement.lang === "en" ? "en" : "ja");
         });
       } else {
         ordered.sort(function (a, b) {
@@ -272,7 +272,8 @@
         }
       });
 
-      count.textContent = visibleCount + " / " + cards.length + "体";
+      count.textContent = visibleCount + " / " + cards.length
+        + (document.documentElement.lang === "en" ? " monsters" : "体");
       empty.hidden = visibleCount !== 0;
     }
 
@@ -335,6 +336,7 @@
     }
 
     document.title = nextDocument.title;
+    document.documentElement.lang = nextDocument.documentElement.lang || "ja";
     copyBodyState(nextDocument);
     currentMain.replaceWith(nextMain);
 

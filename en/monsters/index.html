@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Old Unknown bestiary, cataloguing monster encounters, classifications, and habitats.">
+  <title>Monsters | Old Unknown</title>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/themes.css">
+  <link rel="stylesheet" href="../../css/layout.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/pages.css">
+  <script src="../../js/navigation.js" defer></script>
+  <script src="../../js/archive-categories.js" defer></script>
+  <script src="../../js/main.js" defer></script>
+</head>
+<body data-archive-category="monsters">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="site-header__inner">
+      <a class="site-brand" href="../index.html" aria-label="Old Unknown home">
+        <span class="site-brand__mark" aria-hidden="true">O</span>
+        <span class="site-brand__text">
+          <span class="site-brand__name">Old Unknown</span>
+          <span class="site-brand__sub">Official Lore Archive</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <span class="nav-toggle__line" aria-hidden="true"></span>
+        <span class="nav-toggle__text">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation" data-site-nav>
+        <ul class="site-nav__list">
+          <li><a href="../world/index.html">World</a></li>
+          <li><a href="../nations/index.html">Nations</a></li>
+          <li><a href="../../glossary/index.html">Glossary</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero page-hero--monsters-index">
+      <div class="page-hero__inner">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="../index.html">Old Unknown</a></li>
+            <li aria-current="page" data-archive-title>Monsters</li>
+          </ol>
+        </nav>
+        <p class="eyebrow" data-archive-eyebrow>Bestiary</p>
+        <h1 data-archive-title>Monsters</h1>
+        <p data-archive-description>A bestiary cataloguing monster encounters, classifications, and habitats.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__inner">
+        <div class="people-database monster-database">
+          <aside class="people-database__filters lore-panel" aria-labelledby="monsters-filter-title">
+            <h2 id="monsters-filter-title">Search Monsters</h2>
+            <p>Search the bestiary by name, type, or description.</p>
+
+            <div class="people-control">
+              <label for="monster-search">Name or description</label>
+              <input id="monster-search" type="search" placeholder="Search by name or description" data-monster-search>
+            </div>
+
+            <div class="people-control">
+              <label for="monster-type">Type</label>
+              <select id="monster-type" data-monster-type>
+                <option value="">All</option>
+                <option value="Undead type">Undead type</option>
+                <option value="Beast type">Beast type</option>
+                <option value="Avian type">Avian type</option>
+                <option value="Birdfolk type">Birdfolk type</option>
+                <option value="Aquatic type">Aquatic type</option>
+                <option value="Magical beast type">Magical beast type</option>
+                <option value="Fey type">Fey type</option>
+                <option value="Slime type">Slime type</option>
+                <option value="Swarm type">Swarm type</option>
+              </select>
+            </div>
+
+            <div class="people-control">
+              <label for="monster-sort">Sort by</label>
+              <select id="monster-sort" data-monster-sort>
+                <option value="appearance">Listing order</option>
+                <option value="name">Name</option>
+              </select>
+            </div>
+
+            <button class="button button--ghost people-reset" type="button" data-monster-reset>Reset filters</button>
+
+          </aside>
+
+          <div class="people-database__results">
+            <div class="people-results-head">
+              <div>
+                <p class="eyebrow">Bestiary Database</p>
+                <h2>Monster Database</h2>
+              </div>
+              <p class="people-count" data-monster-count>14 / 14 monsters</p>
+            </div>
+
+            <div class="people-grid monster-grid">
+              <div class="person-card monster-card person-card--pending" aria-label="Goblins is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-goblin-list.png" alt="Goblins image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ゴブリン</p>
+                  <h3>Goblins</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Swarm type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>Small, highly prolific monsters that sometimes raid settlements in groups.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Gazelio is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-gazelio-list.png" alt="Gazelio image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ガゼリオ</p>
+                  <h3>Gazelio</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Beast type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>A herbivorous monster with horns and scales that inhabits grasslands, forests, and watersides.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Fluffer is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-fluffer-00.png" alt="Fluffer image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">フラッファー</p>
+                  <h3>Fluffer</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Beast type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>A low-risk herbivorous monster found throughout grasslands and forests.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Skeleton is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-skeleton-list.png" alt="Skeleton image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">スケルトン</p>
+                  <h3>Skeleton</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Undead type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>An undead creature formed when a dead person's bones are animated by miasma or dark magic.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Letterwing is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-letterwing-list.png" alt="Letterwing image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">レターウィング</p>
+                  <h3>Letterwing</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Avian type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>An avian monster with an exceptional homing instinct, widely used to carry messages.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Feu Follet is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-feu-follet-list.png" alt="Feu Follet image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">フュー・フォウ</p>
+                  <h3>Feu Follet</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Undead type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>An undead creature born when the lingering thoughts of the dead bind with miasma or magical power.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Chimaira is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-chimaira-list.png" alt="Chimaira image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">キマイラ</p>
+                  <h3>Chimaira</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Magical beast type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>A large magical beast combining the traits of a lion, goat, and great serpent, capable of wielding three magical attributes.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Silverondo is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-silverondo-list.png" alt="Silverondo image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">シルバロンド</p>
+                  <h3>Silverondo</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Aquatic type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>A common marine magical beast that migrates through warm seas in large schools, its silver scales gleaming.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Vivienne is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-vivienne-list.png" alt="Vivienne image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ヴィヴィアン</p>
+                  <h3>Vivienne</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Fey type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>A fey that infiltrates human cities and uses charm magic to acquire wealth from affluent people.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Vampire is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-vampire-list.png" alt="Vampire image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ヴァンパイア</p>
+                  <h3>Vampire</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Undead type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>An undead being sustained by the blood of living creatures and approaching true immortality.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Slime is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-slime-list.png" alt="Slime image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">スライム</p>
+                  <h3>Slime</h3>
+                  <dl class="person-card__meta">
+                    <div>
+                      <dt>Type</dt>
+                      <dd>Slime type</dd>
+                    </div>
+                    <div>
+                      <dt>Overview</dt>
+                      <dd>An amorphous monster with a viscous, gelatinous body.</dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Harpy is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-harpy-list.png" alt="Harpy image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ハーピー</p>
+                  <h3>Harpy</h3>
+                  <dl class="person-card__meta">
+                    <div><dt>Type</dt><dd>Birdfolk type</dd></div>
+                    <div><dt>Overview</dt><dd>A birdfolk monster with a face and upper body resembling a human woman and an avian lower body.</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Unicorn is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-unicorn-list.png" alt="Unicorn image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">ユニコーン</p>
+                  <h3>Unicorn</h3>
+                  <dl class="person-card__meta">
+                    <div><dt>Type</dt><dd>Beast type</dd></div>
+                    <div><dt>Overview</dt><dd>An exceptionally rare beast-type monster confirmed to inhabit ミィリ・エセル in the グランザール forest region.</dd></div>
+                  </dl>
+                </div>
+              </div>
+
+              <div class="person-card monster-card person-card--pending" aria-label="Cockatrice is in preparation" aria-disabled="true" tabindex="0" data-tooltip="In preparation">
+                <figure class="person-card__image monster-card__image">
+                  <img src="../../assets/images/monster-cockatrice-list.png" alt="Cockatrice image" loading="lazy">
+                </figure>
+                <div class="person-card__body">
+                  <p class="archive-card__label">コカトリス</p>
+                  <h3>Cockatrice</h3>
+                  <dl class="person-card__meta">
+                    <div><dt>Type</dt><dd>Magical beast type</dd></div>
+                    <div><dt>Overview</dt><dd>A magical beast combining the traits of a rooster and reptile, with petrifying venom in its beak and talons.</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+            <p class="people-empty" data-monster-empty hidden>No monsters match the selected filters.</p>
+
+          <section class="lore-panel" aria-labelledby="monsters-related-title">
+            <h2 id="monsters-related-title">Related Categories</h2>
+            <ul class="category-link-list">
+              <li><a href="../world/index.html">World</a></li>
+              <li><a href="../nations/index.html">Nations</a></li>
+              <li><a href="../people/index.html">People</a></li>
+              <li><a href="index.html">Monsters</a></li>
+              <li><a href="../../magic/index.html">Magic</a></li>
+              <li><a href="../../religions/index.html">Religions</a></li>
+              <li><a href="../../landmarks/index.html">Landmarks</a></li>
+              <li><a href="../../history/index.html">History</a></li>
+              <li><a href="../../races/index.html">Races</a></li>
+              <li><a href="../../items/index.html">Items</a></li>
+              <li><a href="../../organizations/index.html">Organizations</a></li>
+              <li><a href="../../facilities/index.html">Facilities</a></li>
+              <li><a href="../../glossary/index.html">Glossary</a></li>
+            </ul>
+          </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">Old Unknown</p>
+      <p class="site-footer__note">Official high fantasy world archive.</p>
+    </div>
+  </footer>
+</body>
+</html>

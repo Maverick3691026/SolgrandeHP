@@ -190,8 +190,56 @@
     }
   };
 
+  var englishCategories = {
+    magic: {
+      label: "Magic",
+      eyebrow: "Arcane Systems",
+      description: "Magical systems, disciplines, forbidden arts, catalysts, and academic research that shape civilization.",
+      panelTitle: "Magic Archive Format",
+      panelText: "Each entry records its discipline, cost, medium, activation requirements, and social restrictions.",
+      entries: [
+        ["Utility Magic", "Basic magic used for everyday tasks such as lighting, ignition, cleaning, and drying."],
+        ["Elemental Magic", "A fundamental magical system that draws power by resonating with natural elements such as earth, water, fire, and wind."],
+        ["Summoning Magic", "In preparation."],
+        ["Healing Magic", "In preparation."],
+        ["Talisman Magic", "In preparation."],
+        ["Ancient Language Magic", "In preparation."],
+        ["Dragon Language Magic", "In preparation."],
+        ["Forbidden Magic", "Spells whose use is prohibited by nations or religions."]
+      ]
+    },
+    religions: {
+      label: "Religions",
+      eyebrow: "Faiths and Temples",
+      description: "Gods, scriptures, rites, and temple powers, recording how faith shapes politics and daily life.",
+      panelTitle: "Religion Archive Format",
+      panelText: "Each entry records doctrine, holy days, sacred places, hierarchy, and relationships with nations.",
+      entries: [
+        ["Solar Faith", "A public faith often closely connected to royal authority."],
+        ["Rites of the Stars", "A ritual tradition associated with calendars, navigation, and prophecy."],
+        ["Local Faiths", "Community faiths honoring local spirits and ancestors."]
+      ]
+    },
+    landmarks: {
+      label: "Landmarks",
+      eyebrow: "Landmarks",
+      description: "Ruins, sacred places, natural wonders, and cityscapes that form the settings of journeys and events.",
+      panelTitle: "Landmark Archive Format",
+      panelText: "Each entry records its location, custodian, history, related events, and nearby facilities.",
+      entries: [
+        ["Fools' Mountains", "Part of a vast mountain range crossing the continent."],
+        ["Lake Negreia", "A high-altitude lake nestled among the mountains, where the blessing of the creator goddess Livianna remains."]
+      ]
+    }
+  };
+
   function getCategory() {
     var key = document.body.getAttribute("data-archive-category");
+
+    if (document.documentElement.lang === "en") {
+      return englishCategories[key] || null;
+    }
+
     return categories[key];
   }
 
@@ -215,7 +263,8 @@
       list.innerHTML = category.entries.map(function (entry) {
         var title = entry[2]
           ? '<a href="' + entry[2] + '">' + entry[0] + "</a>"
-          : '<span class="entry-link--pending" aria-disabled="true" tabindex="0" data-tooltip="準備中">' + entry[0] + "</span>";
+          : '<span class="entry-link--pending" aria-disabled="true" tabindex="0" data-tooltip="'
+            + (document.documentElement.lang === "en" ? "In preparation" : "準備中") + '">' + entry[0] + "</span>";
         return '<li class="entry-item"><h3>' + title + '</h3><p>' + entry[1] + "</p></li>";
       }).join("");
     }
@@ -260,27 +309,43 @@
     }
 
     if (panel.querySelector("h2")) {
-      panel.querySelector("h2").textContent = category.label + "検索";
+      panel.querySelector("h2").textContent = document.documentElement.lang === "en"
+        ? "Search " + category.label
+        : category.label + "検索";
     }
     if (panel.querySelector("p")) {
-      panel.querySelector("p").textContent = "名前や説明を横断して" + category.label + "資料を探すための索引です。";
+      panel.querySelector("p").textContent = document.documentElement.lang === "en"
+        ? "Search the " + category.label.toLowerCase() + " archive by name or description."
+        : "名前や説明を横断して" + category.label + "資料を探すための索引です。";
     }
 
     controls = document.createElement("div");
     controls.className = "archive-search-controls";
-    controls.innerHTML =
-      '<div class="people-control">' +
-        '<label for="archive-search">名前・説明検索</label>' +
-        '<input id="archive-search" type="search" placeholder="名前・説明で検索" data-archive-search>' +
-      '</div>' +
-      '<div class="people-control">' +
-        '<label for="archive-sort">並び替え</label>' +
-        '<select id="archive-sort" data-archive-sort>' +
-          '<option value="appearance">掲載順</option>' +
-          '<option value="name">名前順</option>' +
-        '</select>' +
-      '</div>' +
-      '<button class="button button--ghost people-reset" type="button" data-archive-reset>条件をリセット</button>';
+    controls.innerHTML = document.documentElement.lang === "en"
+      ? '<div class="people-control">' +
+          '<label for="archive-search">Name or description</label>' +
+          '<input id="archive-search" type="search" placeholder="Search by name or description" data-archive-search>' +
+        '</div>' +
+        '<div class="people-control">' +
+          '<label for="archive-sort">Sort by</label>' +
+          '<select id="archive-sort" data-archive-sort>' +
+            '<option value="appearance">Listing order</option>' +
+            '<option value="name">Name</option>' +
+          '</select>' +
+        '</div>' +
+        '<button class="button button--ghost people-reset" type="button" data-archive-reset>Reset filters</button>'
+      : '<div class="people-control">' +
+          '<label for="archive-search">名前・説明検索</label>' +
+          '<input id="archive-search" type="search" placeholder="名前・説明で検索" data-archive-search>' +
+        '</div>' +
+        '<div class="people-control">' +
+          '<label for="archive-sort">並び替え</label>' +
+          '<select id="archive-sort" data-archive-sort>' +
+            '<option value="appearance">掲載順</option>' +
+            '<option value="name">名前順</option>' +
+          '</select>' +
+        '</div>' +
+        '<button class="button button--ghost people-reset" type="button" data-archive-reset>条件をリセット</button>';
     panel.appendChild(controls);
 
     count = document.createElement("p");
@@ -305,7 +370,7 @@
 
       if (sort.value === "name") {
         ordered.sort(function (a, b) {
-          return a.name.localeCompare(b.name, "ja");
+          return a.name.localeCompare(b.name, document.documentElement.lang === "en" ? "en" : "ja");
         });
       } else {
         ordered.sort(function (a, b) {
@@ -322,8 +387,11 @@
         }
       });
 
-      count.textContent = visibleCount + " / " + items.length + "件";
-      empty.textContent = "条件に一致する" + category.label + "資料が見つかりません。";
+      count.textContent = visibleCount + " / " + items.length
+        + (document.documentElement.lang === "en" ? " entries" : "件");
+      empty.textContent = document.documentElement.lang === "en"
+        ? "No " + category.label.toLowerCase() + " entries match your search."
+        : "条件に一致する" + category.label + "資料が見つかりません。";
       empty.hidden = visibleCount !== 0;
     }
 

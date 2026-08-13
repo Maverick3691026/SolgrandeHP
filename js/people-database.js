@@ -15,6 +15,41 @@
     return String(value || "").trim().toLocaleLowerCase("ja-JP");
   }
 
+  function isEnglishPage() {
+    return document.documentElement.lang === "en";
+  }
+
+  function translateValue(value) {
+    var translations = {
+      "ベルモーシア公国": "Principality of Bermouthia",
+      "タレンフォール要塞公国": "Fortress Duchy of Tarrenfall",
+      "人族": "Human",
+      "男性": "Male",
+      "女性": "Female",
+      "村長": "Village chief",
+      "鍛冶師": "Blacksmith",
+      "主婦": "Homemaker",
+      "薬師": "Herbalist",
+      "錬金術師": "Alchemist",
+      "司祭": "Priest",
+      "Bランク冒険者": "B-rank adventurer",
+      "店主": "Shopkeeper",
+      "自警団員": "Militia member",
+      "冒険者": "Adventurer",
+      "なし": "None"
+    };
+
+    if (!isEnglishPage()) {
+      return value;
+    }
+
+    return translations[value] || value;
+  }
+
+  function resolveUrl(url) {
+    return isEnglishPage() && url ? "../" + url : url;
+  }
+
   function uniqueValues(key) {
     var values = people
       .reduce(function (result, person) {
@@ -40,7 +75,7 @@
     values.forEach(function (value) {
       var option = document.createElement("option");
       option.value = value;
-      option.textContent = value;
+      option.textContent = translateValue(value);
       select.appendChild(option);
     });
   }
@@ -105,7 +140,7 @@
     var description = document.createElement("dd");
 
     term.textContent = label;
-    description.textContent = value || "未設定";
+    description.textContent = translateValue(value) || (isEnglishPage() ? "Not set" : "未設定");
     item.appendChild(term);
     item.appendChild(description);
 
@@ -113,7 +148,8 @@
   }
 
   function createCard(person) {
-    var card = document.createElement(person.pending ? "div" : "a");
+    var isPending = person.pending || isEnglishPage();
+    var card = document.createElement(isPending ? "div" : "a");
     var figure = document.createElement("figure");
     var image = document.createElement("img");
     var body = document.createElement("div");
@@ -122,32 +158,36 @@
     var meta = document.createElement("dl");
 
     card.className = "person-card";
-    if (person.pending) {
+    if (isPending) {
       card.classList.add("person-card--pending");
-      card.setAttribute("aria-label", person.name + "は準備中です");
+      card.setAttribute("aria-label", isEnglishPage()
+        ? person.englishName + " is in preparation"
+        : person.name + "は準備中です");
       card.setAttribute("aria-disabled", "true");
       card.setAttribute("tabindex", "0");
-      card.dataset.tooltip = "準備中";
+      card.dataset.tooltip = isEnglishPage() ? "In preparation" : "準備中";
     } else {
-      card.href = person.detailUrl;
+      card.href = resolveUrl(person.detailUrl);
       card.setAttribute("aria-label", person.name + "の詳細ページへ");
     }
 
     figure.className = "person-card__image";
-    image.src = person.image;
-    image.alt = person.name + "の人物画像";
+    image.src = resolveUrl(person.image);
+    image.alt = isEnglishPage()
+      ? person.englishName + " portrait"
+      : person.name + "の人物画像";
     image.loading = "lazy";
     figure.appendChild(image);
 
     body.className = "person-card__body";
     label.className = "archive-card__label";
-    label.textContent = person.englishName || "Person";
-    title.textContent = person.name;
+    label.textContent = isEnglishPage() ? person.name : (person.englishName || "Person");
+    title.textContent = isEnglishPage() ? (person.englishName || person.name) : person.name;
 
     meta.className = "person-card__meta";
-    meta.appendChild(createMeta("種族", person.race));
-    meta.appendChild(createMeta("所属", person.affiliation));
-    meta.appendChild(createMeta("職業・立場", person.occupation));
+    meta.appendChild(createMeta(isEnglishPage() ? "Race" : "種族", person.race));
+    meta.appendChild(createMeta(isEnglishPage() ? "Affiliation" : "所属", person.affiliation));
+    meta.appendChild(createMeta(isEnglishPage() ? "Occupation / role" : "職業・立場", person.occupation));
 
     body.appendChild(label);
     body.appendChild(title);
@@ -167,7 +207,8 @@
     });
 
     controls.grid.replaceChildren(fragment);
-    controls.count.textContent = results.length + " / " + people.length + "人";
+    controls.count.textContent = results.length + " / " + people.length
+      + (isEnglishPage() ? " people" : "人");
     controls.empty.hidden = results.length !== 0;
   }
 
@@ -221,10 +262,10 @@
     state.attribute = "";
     state.sort = "name";
     controls.query.value = "";
-    controls.nation.innerHTML = '<option value="">すべて</option>';
-    controls.race.innerHTML = '<option value="">すべて</option>';
-    controls.occupation.innerHTML = '<option value="">すべて</option>';
-    controls.attribute.innerHTML = '<option value="">すべて</option>';
+    controls.nation.innerHTML = '<option value="">' + (isEnglishPage() ? "All" : "すべて") + "</option>";
+    controls.race.innerHTML = '<option value="">' + (isEnglishPage() ? "All" : "すべて") + "</option>";
+    controls.occupation.innerHTML = '<option value="">' + (isEnglishPage() ? "All" : "すべて") + "</option>";
+    controls.attribute.innerHTML = '<option value="">' + (isEnglishPage() ? "All" : "すべて") + "</option>";
     controls.sort.value = "name";
 
     fillSelect(controls.nation, uniqueValues("nation"));
