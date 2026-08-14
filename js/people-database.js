@@ -29,8 +29,10 @@
       "村長": "Village chief",
       "鍛冶師": "Blacksmith",
       "主婦": "Homemaker",
-      "薬師": "Herbalist",
+      "薬師": "Apothecary",
       "錬金術師": "Alchemist",
+      "無所属": "None",
+      "ドルガフ村": "Dolgaf Village",
       "司祭": "Priest",
       "Bランク冒険者": "B-rank adventurer",
       "店主": "Shopkeeper",
@@ -148,7 +150,7 @@
   }
 
   function createCard(person) {
-    var isPending = person.pending || (isEnglishPage() && person.id !== "sallis-lioncourt");
+    var isPending = person.pending;
     var card = document.createElement(isPending ? "div" : "a");
     var figure = document.createElement("figure");
     var image = document.createElement("img");
