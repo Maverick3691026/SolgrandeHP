@@ -919,6 +919,10 @@
   font-size: clamp(2rem, 3vw, 2.7rem);
 }
 
+body[data-archive-category="people"]:has(.archive-entry) .page-hero h1 {
+  font-size: clamp(2rem, 3vw, 2.7rem);
+}
+
 .nation-portal__group {
   margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
