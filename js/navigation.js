@@ -31,6 +31,7 @@
     "nations/entries/eigelton.html",
     "nations/entries/dorgaf-village.html",
     "people/index.html",
+    "people/entries/barks-harland.html",
     "monsters/index.html",
     "magic/index.html",
     "religions/index.html",

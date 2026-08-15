@@ -204,6 +204,24 @@
       appearanceOrder: 17,
       image: "../assets/people/portrait-milica-lioncourt.png",
       detailUrl: "entries/milica-lioncourt.html"
+    },
+    {
+      id: "barks-harland",
+      name: "バークス・ハーランド",
+      englishName: "Barks Harland",
+      gender: "男性",
+      race: "人族",
+      origin: "フィンリッジ村",
+      residence: "フィンリッジ村",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "フィンリッジ村自警団団長",
+      attribute: "",
+      epithet: "",
+      specialty: "利き酒・釣り・弓術・索敵・偵察・追跡・野外活動",
+      appearanceOrder: 18,
+      image: "../assets/people/portrait-barks-harland.png",
+      detailUrl: "entries/barks-harland.html"
     }
   ];
 })();
