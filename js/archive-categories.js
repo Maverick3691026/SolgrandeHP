@@ -198,8 +198,8 @@
       panelTitle: "Magic Archive Format",
       panelText: "Each entry records its discipline, cost, medium, activation requirements, and social restrictions.",
       entries: [
-        ["Utility Magic", "Basic magic used for everyday tasks such as lighting, ignition, cleaning, and drying."],
-        ["Elemental Magic", "A fundamental magical system that draws power by resonating with natural elements such as earth, water, fire, and wind."],
+        ["Utility Magic", "Basic magic used for everyday tasks such as lighting, ignition, cleaning, and drying.", "entries/utility-magic.html"],
+        ["Elemental Magic", "A fundamental magical system that draws power by resonating with natural elements such as earth, water, fire, and wind.", "entries/elemental-magic.html"],
         ["Summoning Magic", "In preparation."],
         ["Healing Magic", "In preparation."],
         ["Talisman Magic", "In preparation."],
@@ -227,8 +227,8 @@
       panelTitle: "Landmark Archive Format",
       panelText: "Each entry records its location, custodian, history, related events, and nearby facilities.",
       entries: [
-        ["Fools' Mountains", "Part of a vast mountain range crossing the continent."],
-        ["Lake Negreia", "A high-altitude lake nestled among the mountains, where the blessing of the creator goddess Livianna remains."]
+        ["Fools' Mountains", "Part of a vast mountain range crossing the continent.", "entries/fools-mountains.html"],
+        ["Lake Negreia", "A high-altitude lake nestled among the mountains, where the blessing of the creator goddess Livianna remains.", "entries/lake-negreia.html"]
       ]
     },
     history: {
@@ -272,7 +272,7 @@
       panelTitle: "Item Archive Format",
       panelText: "Each entry records its type, creator, location, effects, and related people.",
       entries: [
-        ["Weapons and Armor", "Equipment appearing in wars and heroic tales."]
+        ["Weapons and Armor", "Equipment appearing in wars and heroic tales.", "equipment/index.html"]
       ]
     },
     organizations: {
@@ -282,9 +282,9 @@
       panelTitle: "Organization Archive Format",
       panelText: "Each entry records its purpose, headquarters, leader, members, alliances, and rivalries.",
       entries: [
-        ["Adventurers Guild", "An organization handling requests, adventurer registration, material purchases, and disaster response."],
-        ["Merchant Guild", "An economic organization of merchants, traders, artisans, and distributors supporting trade and markets."],
-        ["Judicial System", "Judicial organizations and state institutions maintaining law and protecting citizens through fair judgment."],
+        ["Adventurers Guild", "An organization handling requests, adventurer registration, material purchases, and disaster response.", "entries/adventurers-guild.html"],
+        ["Merchant Guild", "An economic organization of merchants, traders, artisans, and distributors supporting trade and markets.", "entries/merchant-guild.html"],
+        ["Judicial System", "Judicial organizations and state institutions maintaining law and protecting citizens through fair judgment.", "entries/national-courts.html"],
         ["Slave Merchants", "State-authorized organizations handling slave contracts and transactions."],
         ["Knightly Orders", "Armed organizations serving nations or faiths."],
         ["Trading Companies and Associations", "Organizations influencing trade, professions, and urban administration."],
@@ -303,7 +303,7 @@
         ["Education and Research", "Academies, libraries, laboratories, and other facilities devoted to learning and inquiry."],
         ["Production and Workshops", "Forges, workshops, manufactories, and other facilities producing tools and supplies."],
         ["Administration and Justice", "Government offices, courts, and other facilities supporting governance and law enforcement."],
-        ["Commerce and Markets", "Markets, shops, trading posts, and other places where goods and money change hands."],
+        ["Commerce and Markets", "Markets, shops, trading posts, and other places where goods and money change hands.", "commercial/index.html"],
         ["Roads and Travel", "Roads, checkpoints, stations, and other facilities supporting travel and distribution."]
       ]
     },
@@ -314,14 +314,14 @@
       panelTitle: "Glossary Entry Format",
       panelText: "Each entry records its reading, category, related archive sections, first appearance, and explanation.",
       entries: [
-        ["Heiramnova", "A planet with two moons, consisting of one continent and several island chains."],
-        ["Viala", "The common currency widely circulated throughout Heiramnova."],
+        ["Heiramnova", "A planet with two moons, consisting of one continent and several island chains.", "entries/heiramnova.html"],
+        ["Viala", "The common currency widely circulated throughout Heiramnova.", "entries/viala.html"],
         ["Sword Schools", "Traditions that systematize sword techniques and philosophies and pass them from master to student."],
-        ["Length Notation", "A system of length and distance units comprising ティル, Riiv, ガルナ, and ヴェルド."],
-        ["Speed Notation", "A notation system expressing speed through distance traveled over a fixed period."],
+        ["Length Notation", "A system of length and distance units comprising Til, Riiv, Garna, and Veld.", "entries/length-units.html"],
+        ["Speed Notation", "A notation system expressing speed through distance traveled over a fixed period.", "entries/speed-notation.html"],
         ["Criminal Mark", "A mark placed on those convicted of crimes above a defined level of severity."],
         ["Slave Mark", "A magical mark associated with a slave contract."],
-        ["Fruits of Heiramnova I", "Fourteen fruits found in Heiramnova, including their effects, uses, and flavors."],
+        ["Fruits of Heiramnova I", "Fourteen fruits found in Heiramnova, including their effects, uses, and flavors.", "entries/solgrande-fruits-01.html"],
         ["The Tale of Hero Klaus: Volume I", "A folktale from the continent depicting the birth of the hero Klaus."]
       ]
     }
