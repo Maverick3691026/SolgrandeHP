@@ -36,10 +36,9 @@
   width: 2.75rem;
   height: 2.75rem;
   place-items: center;
-  color: var(--color-night);
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  background: linear-gradient(135deg, var(--color-gold-soft), var(--color-gold));
+  color: transparent;
+  font-size: 0;
+  background: var(--color-gold) url("../assets/images/site-brand-emblem.png") center / cover no-repeat;
   border: 1px solid rgba(255, 255, 255, 0.38);
 }
 
