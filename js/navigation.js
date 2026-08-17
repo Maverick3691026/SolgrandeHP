@@ -89,7 +89,6 @@
     "music/index.html",
     "novels/index.html",
     "novels/prologue.html"
-    ,"novels/episode-01.html"
   ];
   var languageResizeReady = false;
 
