@@ -222,6 +222,25 @@
       appearanceOrder: 18,
       image: "../assets/people/portrait-barks-harland.png",
       detailUrl: "entries/barks-harland.html"
+    },
+    {
+      id: "darius-haldan",
+      name: "ダリウス・ハルダン",
+      englishName: "Darius Haldan",
+      gender: "男性",
+      race: "人族",
+      origin: "フィンリッジ",
+      residence: "フィンリッジ",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "雑貨店店主",
+      attribute: "",
+      epithet: "",
+      specialty: "値段交渉・身体強化・鑑定",
+      appearanceOrder: 19,
+      image: "../assets/people/portrait-darius-haldan.png",
+      pending: true,
+      detailUrl: "entries/darius-haldan.html"
     }
   ];
 })();
