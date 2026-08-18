@@ -45,8 +45,6 @@
     "magic/entries/elemental-magic.html",
     "religions/index.html",
     "landmarks/index.html",
-    "landmarks/entries/fools-mountains.html",
-    "landmarks/entries/lake-negreia.html",
     "history/index.html",
     "races/index.html",
     "races/entries/human.html",
