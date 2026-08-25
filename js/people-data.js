@@ -241,6 +241,24 @@
       image: "../assets/people/portrait-darius-haldan.png",
       pending: true,
       detailUrl: "entries/darius-haldan.html"
+    },
+    {
+      id: "rokel-kolpor",
+      name: "ロケル・コルポール",
+      englishName: "Rokel Kolpor",
+      gender: "男性",
+      race: "人族",
+      origin: "ウグ＝ネル",
+      residence: "ウグ＝ネル",
+      nation: "ベルモーシア",
+      affiliation: "ベルモーシア",
+      occupation: "雑貨店店主",
+      attribute: "",
+      epithet: "",
+      specialty: "暗算・先見性",
+      appearanceOrder: 20,
+      image: "../assets/people/portrait-rokel-kolpor.png",
+      detailUrl: "entries/rokel-kolpor.html"
     }
   ];
 })();

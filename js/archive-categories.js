@@ -323,7 +323,8 @@
         ["Criminal Mark", "A mark placed on those convicted of crimes above a defined level of severity."],
         ["Slave Mark", "A magical mark associated with a slave contract."],
         ["Fruits of Heiramnova I", "Fourteen fruits found in Heiramnova, including their effects, uses, and flavors.", "entries/solgrande-fruits-01.html"],
-        ["The Tale of Hero Klaus: Volume I", "A folktale from the continent depicting the birth of the hero Klaus."]
+        ["The Tale of Hero Klaus — Novel Edition", "The novel edition of the Brenorian tale is in preparation."],
+        ["The Tale of Hero Klaus — Picture Book", "A 32-page illustrated journey through the life of Hero Klaus.", "entries/hero-klaus-picture-book.html"]
       ]
     }
   };

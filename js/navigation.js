@@ -38,6 +38,7 @@
     "people/entries/tora-harland.html",
     "people/entries/milica-lioncourt.html",
     "people/entries/barks-harland.html",
+    "people/entries/rokel-kolpor.html",
     "monsters/index.html",
     "monsters/entries/fluffer.html",
     "magic/index.html",
@@ -84,9 +85,12 @@
     "glossary/entries/length-units.html",
     "glossary/entries/speed-notation.html",
     "glossary/entries/solgrande-fruits-01.html",
+    "glossary/entries/hero-klaus.html",
+    "glossary/entries/hero-klaus-picture-book.html",
     "music/index.html",
     "novels/index.html",
-    "novels/prologue.html"
+    "novels/prologue.html",
+    "novels/episode-01.html"
   ];
   var languageResizeReady = false;
 
