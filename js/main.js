@@ -146,6 +146,64 @@
     });
   }
 
+  function initPictureBooks() {
+    document.querySelectorAll("[data-picture-book]").forEach(function (book) {
+      var pages = Array.prototype.slice.call(book.querySelectorAll(".picture-book__page"));
+      var previous = book.querySelector("[data-picture-book-prev]");
+      var next = book.querySelector("[data-picture-book-next]");
+      var status = book.querySelector("[data-picture-book-status]");
+      var current = 0;
+
+      if (!pages.length || !previous || !next || !status || book.dataset.pictureBookReady === "true") {
+        return;
+      }
+
+      book.dataset.pictureBookReady = "true";
+
+      function showPage(index, scrollToBook) {
+        current = Math.max(0, Math.min(index, pages.length - 1));
+
+        pages.forEach(function (page, pageIndex) {
+          page.classList.toggle("is-active", pageIndex === current);
+        });
+
+        previous.disabled = current === 0;
+        next.disabled = current === pages.length - 1;
+        status.textContent = (current + 1) + " / " + pages.length;
+
+        if (pages[current + 1]) {
+          pages[current + 1].querySelector("img").loading = "eager";
+        }
+
+        if (scrollToBook) {
+          book.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      previous.addEventListener("click", function () {
+        showPage(current - 1, true);
+      });
+
+      next.addEventListener("click", function () {
+        showPage(current + 1, true);
+      });
+
+      book.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft" && current > 0) {
+          event.preventDefault();
+          showPage(current - 1, true);
+        }
+
+        if (event.key === "ArrowRight" && current < pages.length - 1) {
+          event.preventDefault();
+          showPage(current + 1, true);
+        }
+      });
+
+      showPage(0, false);
+    });
+  }
+
   function isInternalPageLink(link) {
     var url;
 
@@ -314,6 +372,7 @@
 
     initHomeAudio();
     initMusicPlayers();
+    initPictureBooks();
     initMonsterDatabase();
   }
 
@@ -397,6 +456,7 @@
 
     initHomeAudio();
     initMusicPlayers();
+    initPictureBooks();
     initMonsterDatabase();
     initPersistentNavigation();
   });

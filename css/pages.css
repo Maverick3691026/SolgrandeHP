@@ -1611,6 +1611,70 @@ body[data-archive-category="people"]:has(.archive-entry) .page-hero h1 {
   border: 1px solid rgba(226, 207, 145, 0.16);
 }
 
+.volume-list {
+  display: grid;
+  align-items: stretch;
+}
+
+.volume-list a {
+  display: flex;
+  width: 100%;
+}
+
+.picture-book {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  margin-top: 1.4rem;
+}
+
+.picture-book__page {
+  margin: 0;
+}
+
+.picture-book__page:not(.is-active) {
+  display: none;
+}
+
+.picture-book__page img {
+  display: block;
+  width: min(100%, 54rem);
+  height: auto;
+  margin-inline: auto;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(226, 207, 145, 0.2);
+  box-shadow: 0 1.1rem 2.6rem rgba(0, 0, 0, 0.28);
+}
+
+.picture-book__page figcaption {
+  margin-top: 0.55rem;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+.picture-book__controls {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 1fr) auto minmax(6.5rem, 1fr);
+  gap: 0.75rem;
+  width: min(100%, 34rem);
+  align-items: center;
+  margin-inline: auto;
+}
+
+.picture-book__controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  transform: none;
+}
+
+.picture-book__status {
+  min-width: 5.5rem;
+  color: var(--color-gold-soft);
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
 .term-list {
   display: grid;
   gap: 0.85rem;
@@ -1719,4 +1783,9 @@ body[data-archive-category="people"]:has(.archive-entry) .page-hero h1 {
   .race-entry-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* Keep archive and index page titles consistent across every page variant. */
+.page-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.8rem) !important;
 }
