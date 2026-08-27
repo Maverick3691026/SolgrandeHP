@@ -33,6 +33,7 @@
     "people/index.html",
     "people/entries/celine-haldan.html",
     "people/entries/sallis-lioncourt.html",
+    "people/entries/cassian-hales.html",
     "people/entries/kieval-lioncourt.html",
     "people/entries/arvhel-lioncourt.html",
     "people/entries/tora-harland.html",

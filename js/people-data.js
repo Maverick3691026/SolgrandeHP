@@ -92,7 +92,6 @@
       specialty: "初級回復魔法・解毒魔法・薬学・浄化魔法",
       appearanceOrder: 11,
       image: "../assets/people/portrait-cassian-hales.png",
-      pending: true,
       detailUrl: "entries/cassian-hales.html"
     },
     {
