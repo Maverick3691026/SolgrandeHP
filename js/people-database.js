@@ -27,8 +27,11 @@
       "クローネ家 / リオンコート家": "Krone family / Lioncourt family",
       "首都シャールカタフの冒険者ギルド本部": "Adventurers Guild Headquarters in Skar'kataph",
       "人族": "Human",
+      "獣人 コヨーテ種": "Coyote Beastfolk",
       "男性": "Male",
       "女性": "Female",
+      "不明": "Unknown",
+      "不定": "No fixed residence",
       "村長": "Village chief",
       "鍛冶師": "Blacksmith",
       "村長・鍛冶師": "Village chief / Blacksmith",
@@ -46,6 +49,7 @@
       "自警団員": "Militia member",
       "フィンリッジ村自警団団長": "Captain of the Finridge village watch",
       "冒険者": "Adventurer",
+      "Eランク冒険者": "E-rank adventurer",
       "なし": "None"
     };
 
