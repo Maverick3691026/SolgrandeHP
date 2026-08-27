@@ -87,6 +87,7 @@
     "glossary/entries/speed-notation.html",
     "glossary/entries/solgrande-fruits-01.html",
     "glossary/entries/hero-klaus.html",
+    "glossary/entries/hero-klaus-upper.html",
     "glossary/entries/hero-klaus-picture-book.html",
     "music/index.html",
     "novels/index.html",

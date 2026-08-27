@@ -185,7 +185,7 @@
         ["犯罪紋", "犯罪歴を示すため、一定以上の罪を犯した者に刻まれる紋。"],
         ["奴隷紋", "奴隷契約に関わる魔法の紋。"],
         ["エラムノーバの果物①", "エラムノーバに存在する14種類の果実と、その効能や用途、風味。", "entries/solgrande-fruits-01.html"],
-        ["英雄クラウス物語 小説版", "ブレノリア大陸に伝わる英雄クラウスの物語。小説版は準備中です。"],
+        ["英雄クラウス物語 小説版", "ブレノリア大陸に伝わる英雄クラウスの物語。", "entries/hero-klaus.html"],
         ["英雄クラウス物語 絵本版", "英雄クラウスの生涯を32枚の絵でたどる絵本。", "entries/hero-klaus-picture-book.html"]
       ]
     }
@@ -323,7 +323,7 @@
         ["Criminal Mark", "A mark placed on those convicted of crimes above a defined level of severity."],
         ["Slave Mark", "A magical mark associated with a slave contract."],
         ["Fruits of Heiramnova I", "Fourteen fruits found in Heiramnova, including their effects, uses, and flavors.", "entries/solgrande-fruits-01.html"],
-        ["The Tale of Hero Klaus — Novel Edition", "The novel edition of the Brenorian tale is in preparation."],
+        ["The Tale of Hero Klaus — Novel Edition", "The novel edition of the tale handed down across Brenoria.", "entries/hero-klaus.html"],
         ["The Tale of Hero Klaus — Picture Book", "A 32-page illustrated journey through the life of Hero Klaus.", "entries/hero-klaus-picture-book.html"]
       ]
     }
