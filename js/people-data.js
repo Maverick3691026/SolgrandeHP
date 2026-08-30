@@ -293,7 +293,6 @@
       specialty: "人の顔と名前を覚えること・料理",
       appearanceOrder: 22,
       image: "../assets/people/portrait-marta-brown.png",
-      pending: true,
       detailUrl: "entries/marta-brown.html"
     },
     {

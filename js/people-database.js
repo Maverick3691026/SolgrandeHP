@@ -46,6 +46,7 @@
       "Bランク冒険者": "B-rank adventurer",
       "店主": "Shopkeeper",
       "雑貨店店主": "General store proprietor",
+      "ハースルート女将": "Hearthroot proprietress",
       "自警団員": "Militia member",
       "フィンリッジ村自警団団長": "Captain of the Finridge village watch",
       "冒険者": "Adventurer",
