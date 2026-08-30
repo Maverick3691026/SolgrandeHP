@@ -93,7 +93,9 @@
     "music/index.html",
     "novels/index.html",
     "novels/prologue.html",
-    "novels/episode-01.html"
+    "novels/episode-01.html",
+    "novels/episode-02.html",
+    "novels/episode-03.html"
   ];
   var languageResizeReady = false;
 
