@@ -99,7 +99,8 @@
     "novels/episode-01.html",
     "novels/episode-02.html",
     "novels/episode-03.html",
-    "novels/episode-04.html"
+    "novels/episode-04.html",
+    "novels/episode-05.html"
   ];
   var languageResizeReady = false;
 
