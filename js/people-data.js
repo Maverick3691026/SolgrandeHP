@@ -18,7 +18,6 @@
       specialty: "仲裁・人心掌握",
       appearanceOrder: 7,
       image: "../assets/people/portrait-ruben-haldan.png",
-      pending: true,
       detailUrl: "entries/ruben-haldan.html"
     },
     {

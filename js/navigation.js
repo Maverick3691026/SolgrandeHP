@@ -31,6 +31,7 @@
     "nations/entries/eigelton.html",
     "nations/entries/dorgaf-village.html",
     "people/index.html",
+    "people/entries/ruben-haldan.html",
     "people/entries/celine-haldan.html",
     "people/entries/sallis-lioncourt.html",
     "people/entries/cassian-hales.html",
@@ -44,6 +45,7 @@
     "people/entries/pedra.html",
     "monsters/index.html",
     "monsters/entries/fluffer.html",
+    "monsters/entries/owlbear.html",
     "magic/index.html",
     "magic/entries/utility-magic.html",
     "magic/entries/elemental-magic.html",
@@ -96,7 +98,8 @@
     "novels/prologue.html",
     "novels/episode-01.html",
     "novels/episode-02.html",
-    "novels/episode-03.html"
+    "novels/episode-03.html",
+    "novels/episode-04.html"
   ];
   var languageResizeReady = false;
 
