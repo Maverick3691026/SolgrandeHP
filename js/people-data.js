@@ -237,7 +237,6 @@
       specialty: "値段交渉・身体強化・鑑定",
       appearanceOrder: 19,
       image: "../assets/people/portrait-darius-haldan.png",
-      pending: true,
       detailUrl: "entries/darius-haldan.html"
     },
     {

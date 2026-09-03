@@ -40,6 +40,7 @@
     "people/entries/tora-harland.html",
     "people/entries/milica-lioncourt.html",
     "people/entries/barks-harland.html",
+    "people/entries/darius-haldan.html",
     "people/entries/rokel-kolpor.html",
     "people/entries/marta-brown.html",
     "people/entries/pedra.html",
