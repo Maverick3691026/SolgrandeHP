@@ -310,6 +310,24 @@
       appearanceOrder: 23,
       image: "../assets/people/portrait-pedra.png",
       detailUrl: "entries/pedra.html"
+    },
+    {
+      id: "ritt-harland",
+      name: "リット・ハーランド",
+      englishName: "Ritt Harland",
+      gender: "女性",
+      race: "人族",
+      origin: "フィンリッジ村",
+      residence: "フィンリッジ村",
+      nation: "ベルモーシア公国",
+      affiliation: "ベルモーシア公国",
+      occupation: "主婦",
+      attribute: "",
+      epithet: "",
+      specialty: "野営料理・強打・足払い",
+      appearanceOrder: 24,
+      image: "../assets/people/portrait-ritt-harland.png",
+      detailUrl: "entries/ritt-harland.html"
     }
   ];
 })();
