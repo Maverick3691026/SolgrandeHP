@@ -45,6 +45,7 @@
     "people/entries/marta-brown.html",
     "people/entries/pedra.html",
     "monsters/index.html",
+    "monsters/entries/gazelio.html",
     "monsters/entries/fluffer.html",
     "monsters/entries/owlbear.html",
     "magic/index.html",
